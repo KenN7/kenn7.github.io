@@ -1,0 +1,69 @@
+/* Override theme defaults */
+
+@font-face {
+    font-family: CMR;
+    src: url(/fonts/cmuserif_roman_macroman/cmunrm-webfont.woff);
+  }
+
+@font-face {
+    font-family: CMB;
+    src: url(/fonts/cmuserif_bold_macroman/cmunbx-webfont.woff);
+  }
+
+$base-font-family: CMR;
+
+body {
+    max-width: 40rem;
+    margin: auto;
+    font-family: $base-font-family;
+    text-align: justify;
+}
+
+.container {
+    counter-reset: section -1;
+}
+
+pre {
+    border-radius: 5px;
+}
+
+pre > code {
+    margin: 0.7rem;
+    display: inline-block;
+}
+
+.subtitle {
+    text-align:center;
+}
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: CMB;
+}
+
+h1 {
+    counter-reset: subsection;
+}
+
+h1::before {
+    counter-increment: section;
+    content: counter(section) " ";
+}
+
+h2::before {
+    counter-increment: subsection;
+    content: counter(section) "." counter(subsection) " ";
+}
+
+.title, .post-meta {
+    font-family: CMR;
+    text-align: center;
+    color: #000;
+    font-size: 16
+}
+
+.title::before {
+    content: ""
+}
