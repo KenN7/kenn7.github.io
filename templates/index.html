@@ -2,6 +2,16 @@
 
 {% block content %}
 <h1 class="title">
-  This is my blog made with Zola.
+  {{ section.title }}
 </h1>
+
+{{ section.content | safe }}
+
+{% for subsection in section.subsections %}
+  {% set subsection_item = get_section(path=subsection) %}
+    <li><a href="{{ subsection_item.permalink }}">{{ subsection_item.title }}</a></li>
+{% endfor %}
+
+<!-- {{ __tera_context }} -->
+  
 {% endblock content %}

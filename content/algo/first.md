@@ -1,6 +1,7 @@
 +++
-title = "Algorithms, Session 1, Complexity and divide and conquer"
+title = "Algorithms, Test Session, Ipsum"
 date = 2019-11-27
+description = "v1.0.0"
 +++
 
 # Test

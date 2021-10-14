@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  {{ page.title }}
+</h1>
+<div class="sub_grid">
+  <div>{{ page.description }}</div>
+  <div class="subtitle">{{ page.date }}</div>
+  <div><button id="print_button">🖨️(as pdf)</button></div>
+</div>
+
+{{ page.content | safe }}
+
+{% endblock content %}

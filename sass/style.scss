@@ -1,4 +1,4 @@
-/* Override theme defaults */
+/* LaTeX fonts */
 
 @font-face {
     font-family: CMR;
@@ -11,34 +11,67 @@
   }
 
 $base-font-family: CMR;
+$base-font-size: 16.5px;
+
+/* Body options */
 
 body {
     max-width: 40rem;
     margin: auto;
     font-family: $base-font-family;
+    font-size: $base-font-size;
     text-align: justify;
 }
 
-.container {
-    counter-reset: section -1;
-}
+/* Code beatufier */
 
 pre {
+    padding: 0.7rem;
+    overflow: auto;
     border-radius: 5px;
+  }
+  // The line numbers already provide some kind of left/right padding
+  pre[data-linenos] {
+    padding: 1rem 0;
+  }
+  pre table td {
+    padding: 0;
+  }
+  // The line number cells
+  pre table td:nth-of-type(1) {
+    text-align: center;
+    user-select: none;
+  }
+  pre mark {
+    // If you want your highlights to take the full width.
+    display: block;
+    // The default background colour of a mark is bright yellow
+    background-color: rgba(254, 252, 232, 0.9);
+  }
+  pre table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+/* Headings and auto numbering */
+
+.title {
+    font-family: CMR;
+    text-align: center;
+    color: #000;
+    font-size: 2.2rem;
 }
 
-pre > code {
-    margin: 0.7rem;
-    display: inline-block;
+.container {
+    //start from -1 to not get the numbering on main h1 title
+    counter-reset: section -1; 
 }
 
-.subtitle {
-    text-align:center;
+.title::before {
+    // remove number from main title
+    content: "";
 }
 
-/**
- * Headings
- */
 h1, h2, h3, h4, h5, h6 {
     font-family: CMB;
 }
@@ -57,13 +90,13 @@ h2::before {
     content: counter(section) "." counter(subsection) " ";
 }
 
-.title, .post-meta {
-    font-family: CMR;
-    text-align: center;
-    color: #000;
-    font-size: 16
+/* subtitle grid */
+
+.sub_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-.title::before {
-    content: ""
+.sub_grid > * {
+    text-align: center;
 }

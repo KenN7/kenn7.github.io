@@ -1,6 +1,6 @@
 +++
-title = "List of course material"
+title = "Algorithms and optimization"
 sort_by = "date"
-template = "algo.html"
-page_template = "algo-page.html"
+template = "articles.html"
+page_template = "article-page.html"
 +++

@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://algo.kenh.fr"
+base_url = "https://kenn7.github.io"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -15,3 +15,4 @@ highlight_code = true
 [extra]
 # Put all your custom variables here
 katex = true
+mermaid = true
