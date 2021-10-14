@@ -15,12 +15,19 @@ $base-font-size: 16.5px;
 
 /* Body options */
 
+html {
+    font-size: $base-font-size;
+}
+
 body {
     max-width: 40rem;
     margin: auto;
     font-family: $base-font-family;
-    font-size: $base-font-size;
     text-align: justify;
+}
+
+button { 
+    font-size: inherit 
 }
 
 /* Code beatufier */
@@ -99,4 +106,10 @@ h2::before {
 
 .sub_grid > * {
     text-align: center;
+}
+
+/* correction are hidden by default */
+
+.correction {
+    display: none;
 }
