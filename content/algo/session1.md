@@ -20,10 +20,12 @@ def sequence(n):
     return n
 ```
 
-<div class="correction">
+{% correction() %}
+
 Correction:
 O(1)
-</div>
+
+{% end %}
 
 ---
 

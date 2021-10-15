@@ -2,24 +2,19 @@
 function main() {
     let print_button = document.querySelector("#print_button")
     if (print_button) {
-        print_button.onclick = () => window.print()
+        print_button.addEventListener('click', () => window.print() )
     }
 
     let show_correction = document.querySelector("#correction_button")
     if (show_correction) {
-        show_correction.onclick = toggleCorrections
+        show_correction.addEventListener('click', toggleCorrections)
     }
 }
 
 function toggleCorrections() {
     let corrections = document.querySelectorAll(".correction")
     for (c of corrections) {
-        console.log(c.style.display)
-        if (c.style.display === 'none' || c.style.display === '') {
-            c.style.display = 'unset'
-        } else {
-            c.style.display = 'none'
-        }
+        c.hidden = !c.hidden;
     }
 }
 
