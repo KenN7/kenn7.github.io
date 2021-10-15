@@ -7,11 +7,20 @@
 <div class="sub_grid">
   <div>{{ page.description }}</div>
   <div class="subtitle">{{ page.date }}</div>
-  <div><button id="print_button">🖨️(as pdf)</button></div>
+  <div><button id="print_button" class="no-print">🖨️(as pdf)</button></div>
 </div>
-
-<div><button id="correction_button">Corr</button></div>
+<div><button id="all_corr_button" class="no-print">See all corrections</button></div>
 
 {{ page.content | safe }}
 
 {% endblock content %}
+
+{% block footer %}
+<hr>
+<p class="footnote">Found an error? Let us know: 
+    <a href="https://github.com/kenn7/kenn7.github.io/">
+        https://github.com/kenn7/kenn7.github.io/
+    </a>
+</p>
+
+{% endblock footer %}

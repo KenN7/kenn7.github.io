@@ -21,10 +21,8 @@ def sequence(n):
 ```
 
 {% correction() %}
-
 Correction:
 O(1)
-
 {% end %}
 
 ---
@@ -38,6 +36,12 @@ def loop1(n):
     n = n * n
     return n
 ```
+
+{% correction() %}
+Correction:
+O(n)
+{% end %}
+
 ---
 
 ```python
@@ -49,6 +53,12 @@ def loop2(n):
     n = n * n
     return n
 ```
+
+{% correction() %}
+Correction:
+O(log n)
+{% end %}
+
 ---
 
 ```python

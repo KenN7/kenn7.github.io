@@ -13,11 +13,11 @@
 $base-font-family: CMR;
 $base-font-size: 16.5px;
 
-/* Body options */
-
 html {
     font-size: $base-font-size;
 }
+
+/* Body options */
 
 body {
     max-width: 40rem;
@@ -28,6 +28,21 @@ body {
 
 button { 
     font-size: inherit 
+}
+
+/* change print font size */
+
+@media print {
+    html {
+        font-size: $base-font-size*0.8
+    }
+    body {
+        max-width: 90vw;
+    }
+    .no-print,
+    {
+        display: none !important;
+    }
 }
 
 /* Code beatufier */
@@ -108,3 +123,8 @@ h2::before {
     text-align: center;
 }
 
+/* footnote */ 
+
+.footnote {
+    font-size: 0.9rem;
+}
