@@ -3,12 +3,12 @@
 @font-face {
     font-family: CMR;
     src: url(/fonts/cmuserif_roman_macroman/cmunrm-webfont.woff);
-  }
+}
 
 @font-face {
     font-family: CMB;
     src: url(/fonts/cmuserif_bold_macroman/cmunbx-webfont.woff);
-  }
+}
 
 $base-font-family: CMR;
 $base-font-size: 16.5px;
@@ -26,21 +26,17 @@ body {
     text-align: justify;
 }
 
-button { 
-    font-size: inherit 
-}
 
 /* change print font size */
 
 @media print {
     html {
-        font-size: $base-font-size*0.8
+        font-size: $base-font-size*0.8;
     }
     body {
         max-width: 90vw;
     }
-    .no-print,
-    {
+    .no-print {
         display: none !important;
     }
 }
@@ -51,29 +47,34 @@ pre {
     padding: 0.7rem;
     overflow: auto;
     border-radius: 5px;
-  }
-  // The line numbers already provide some kind of left/right padding
-  pre[data-linenos] {
+}
+
+// The line numbers already provide some kind of left/right padding
+pre[data-linenos] {
     padding: 1rem 0;
-  }
-  pre table td {
+}
+
+pre table td {
     padding: 0;
-  }
-  // The line number cells
-  pre table td:nth-of-type(1) {
+}
+
+// The line number cells
+pre table td:nth-of-type(1) {
     text-align: center;
     user-select: none;
-  }
-  pre mark {
+}
+
+pre mark {
     // If you want your highlights to take the full width.
     display: block;
     // The default background colour of a mark is bright yellow
     background-color: rgba(254, 252, 232, 0.9);
-  }
-  pre table {
+}
+
+pre table {
     width: 100%;
     border-collapse: collapse;
-  }
+}
 
 /* Headings and auto numbering */
 
@@ -100,14 +101,13 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     counter-reset: subsection;
+    &:before {
+        counter-increment: section;
+        content: counter(section) " ";
+    }
 }
 
-h1::before {
-    counter-increment: section;
-    content: counter(section) " ";
-}
-
-h2::before {
+h2:before {
     counter-increment: subsection;
     content: counter(section) "." counter(subsection) " ";
 }
@@ -116,7 +116,7 @@ h2::before {
 
 .sub_grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .sub_grid > * {
@@ -128,3 +128,54 @@ h2::before {
 .footnote {
     font-size: 0.9rem;
 }
+
+/* buttons */
+
+button { 
+    font-size: inherit;
+    font-family: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: black;
+}
+
+/* top button effect */
+
+.button_effect {
+    background: linear-gradient(80deg, rgb(116, 116, 116) 50%, rgb(255, 255, 255) 50%);
+    background-position: 100%;
+    background-size: 250% 200%;
+    transition: all 0.3s linear;
+
+    &:hover {
+        background-position: 0;
+        color:rgb(255, 255, 255);
+    }
+}
+
+/* solution button */
+
+.solution_button {
+    border: none;
+    color: black;
+
+    &:after {
+        content: ' ' attr(title);
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+     }
+
+     &:hover:after {
+        content: ' ' attr(title);
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0s;
+        height: 100%;
+    }
+}
+

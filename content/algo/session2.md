@@ -12,6 +12,20 @@ Given an array of integers, return a new array such that each element at index $
 
 Follow-up: what if you can't use division?
 
+{% solution() %}
+Here is the code:
+```python
+def sequence(n):
+    n = n + 1
+    n = n + 4
+    n = n * 4
+    n = n ** 10
+    n = n // 2
+    return n
+```
+
+{% end %}
+
 ## **Locate smallest window to be sorted**
 
 Given an array of intergers that are out of order, determine the bounds of the smallest window that must be sorted in order for the entire array to be sorted. For example given $[3,7,5,6,9]$, you should return $(1,3)$.

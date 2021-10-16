@@ -20,8 +20,8 @@ def sequence(n):
     return n
 ```
 
-{% correction() %}
-Correction:
+{% solution() %}
+Solution:
 O(1)
 {% end %}
 
@@ -37,8 +37,8 @@ def loop1(n):
     return n
 ```
 
-{% correction() %}
-Correction:
+{% solution() %}
+Solution:
 O(n)
 {% end %}
 
@@ -54,8 +54,8 @@ def loop2(n):
     return n
 ```
 
-{% correction() %}
-Correction:
+{% solution() %}
+Solution:
 O(log n)
 {% end %}
 

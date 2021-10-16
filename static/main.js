@@ -5,35 +5,55 @@ function main() {
         print_button.addEventListener('click', () => window.print() )
     }
 
-    let show_correction = document.querySelectorAll(".correction_button")
-    // console.log(show_correction)
-    if (show_correction.length > 0) {
-        for (let c of show_correction) {
-            c.addEventListener('click', toggleCorrection)
+    const solTog = new solutionToggler()
+}
+
+class solutionToggler {
+    constructor() {
+        this.hiddenState = true
+        this.solutions = {}
+
+        this.show_all_solutions = document.querySelector("#all_sol_button")
+        if (this.show_all_solutions) {
+            this.show_all_solutions.addEventListener('click', () => this.toggleAllSolutions())
+        }
+
+        this.show_solution_but = document.querySelectorAll(".solution_button")
+
+        for (const [i,but] of this.show_solution_but.entries()) {
+            const solution = selectSibling(but, ".solution")
+            const id = "sol_"+i
+            but.setAttribute("sol_id",id)
+            this.solutions[id] = [but,solution,{"state":true}]
+            but.addEventListener('click', () => this.toggleSolution(id))
         }
     }
 
-    let show_all_correction = document.querySelector("#all_corr_button")
-    console.log(show_all_correction)
-    if (show_all_correction) {
-        show_all_correction.addEventListener('click', toggleAllCorrections)
+    toggleAllSolutions() {
+        //console.log(this)
+        this.hiddenState = !this.hiddenState
+        this.show_all_solutions.textContent = this.hiddenState ? "Display solutions" : "Hide solutions"
+
+        for (let s of this.show_solution_but) {
+            this.changeStateSolution(s.getAttribute("sol_id"), this.hiddenState)
+        }
+    }
+
+    toggleSolution(sol_id) {
+        const [but,sol,s] = this.solutions[sol_id]
+        s.state = !s.state
+        this.changeStateSolution(sol_id, s.state)
+    }
+
+    changeStateSolution(sol_id, state) {
+        const [but,sol,s] = this.solutions[sol_id]
+        but.textContent = state ? "👇" : "👆"
+        but.title = state ? "See Solution": "Hide Solution"
+        sol.hidden = state
+        s.state = state
     }
 }
 
-function toggleAllCorrections() {
-    let corrections = document.querySelectorAll(".correction")
-    for (let c of corrections) {
-        c.hidden = !c.hidden
-    }
-}
-
-function toggleCorrection(e) {
-    let correction = selectSibling(e.target, ".correction")
-    if (correction) {
-        // console.log(correction)
-        correction.hidden = !correction.hidden;
-    }
-}
 
 function selectSibling(el, sel) {
     let sib = el.nextElementSibling

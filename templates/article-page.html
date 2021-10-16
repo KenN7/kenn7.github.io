@@ -5,11 +5,11 @@
   {{ page.title }}
 </h1>
 <div class="sub_grid">
+  <div><button id="print_button" class="no-print button_effect">🖨️(as pdf)</button></div>
   <div>{{ page.description }}</div>
   <div class="subtitle">{{ page.date }}</div>
-  <div><button id="print_button" class="no-print">🖨️(as pdf)</button></div>
+  <div><button id="all_sol_button" class="no-print button_effect">Display solutions</button></div>
 </div>
-<div><button id="all_corr_button" class="no-print">See all corrections</button></div>
 
 {{ page.content | safe }}
 
