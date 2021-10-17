@@ -44,7 +44,10 @@ class solutionToggler {
         const [but,sol] = this.solutions_elts[sol_id]
         but.textContent = state ? "👇" : "👆"
         but.title = state ? "See Solution": "Hide Solution"
-        sol.hidden = state
+        //we need to handle the transition in js because max-height:auto
+        // cannot be animated
+        sol.style.maxHeight = state ? "0px" : sol.scrollHeight+"px"
+        sol.classList.toggle("hidden", state)
         this.solutions_states[sol_id] = state
     }
 }

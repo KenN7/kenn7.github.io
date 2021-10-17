@@ -179,3 +179,13 @@ button {
     }
 }
 
+.solution {
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+    //max-height: 100px;
+
+    &.hidden {
+        max-height: 0px;
+        opacity: 0;
+    }
+}
