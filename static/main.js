@@ -5,16 +5,31 @@ function main() {
         print_button.addEventListener('click', () => window.print() )
     }
 
-    const solTog = new solutionToggler()
+    // we add the solution toggler only if there are solutions:
+    let show_solution_but = document.querySelectorAll(".solution")
+    //console.log(show_solution_but.length)
+    if (show_solution_but.length > 0) {
+        let but = document.createElement("button");
+        but.append("Display solutions")
+        but.classList.add("no-print", "button_effect")
+        but.id = "all_sol_button"
+        let div_but = document.getElementById('all_sol_but_div');
+        div_but.append(but);
+
+        const solTog = new solutionToggler(but)
+    }
 }
 
+/* <button id="all_sol_button" class="no-print button_effect">Display solutions</button> */
+
 class solutionToggler {
-    constructor() {
+    constructor(but) {
         this.hiddenState = true
         this.solutions_elts = {}
         this.solutions_states = {}
+        this.show_all_solutions = but
 
-        this.show_all_solutions = document.querySelector("#all_sol_button")
+        //this.show_all_solutions = document.querySelector("#all_sol_button")
         if (this.show_all_solutions) {
             this.show_all_solutions.addEventListener('click', () => this.toggleAllSolutions())
         }
