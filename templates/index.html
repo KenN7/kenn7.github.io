@@ -6,6 +6,7 @@
 </h1>
 
 {{ section.content | safe }}
+
 <ul>
 {% for subsection in section.subsections %}
   {% set subsection_item = get_section(path=subsection) %}
