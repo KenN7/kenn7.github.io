@@ -11,21 +11,22 @@ function main() {
 class solutionToggler {
     constructor() {
         this.hiddenState = true
-        this.solutions = {}
+        this.solutions_elts = {}
+        this.solutions_states = {}
 
         this.show_all_solutions = document.querySelector("#all_sol_button")
         if (this.show_all_solutions) {
             this.show_all_solutions.addEventListener('click', () => this.toggleAllSolutions())
         }
 
-        this.show_solution_but = document.querySelectorAll(".solution_button")
+        let show_solution_but = document.querySelectorAll(".solution_button")
 
-        for (const [i,but] of this.show_solution_but.entries()) {
+        for (const [i,but] of show_solution_but.entries()) {
             const solution = selectSibling(but, ".solution")
             const id = "sol_"+i
-            but.setAttribute("sol_id",id)
-            this.solutions[id] = [but,solution,{"state":true}]
-            but.addEventListener('click', () => this.toggleSolution(id))
+            this.solutions_elts[id] = [but,solution]
+            this.solutions_states[id] = true
+            but.addEventListener('click', () => this.changeStateSolution(id, !this.solutions_states[id]))
         }
     }
 
@@ -34,23 +35,17 @@ class solutionToggler {
         this.hiddenState = !this.hiddenState
         this.show_all_solutions.textContent = this.hiddenState ? "Display solutions" : "Hide solutions"
 
-        for (let s of this.show_solution_but) {
-            this.changeStateSolution(s.getAttribute("sol_id"), this.hiddenState)
+        for (let s of Object.keys(this.solutions_states)) {
+            this.changeStateSolution(s, this.hiddenState)
         }
     }
 
-    toggleSolution(sol_id) {
-        const [but,sol,s] = this.solutions[sol_id]
-        s.state = !s.state
-        this.changeStateSolution(sol_id, s.state)
-    }
-
     changeStateSolution(sol_id, state) {
-        const [but,sol,s] = this.solutions[sol_id]
+        const [but,sol] = this.solutions_elts[sol_id]
         but.textContent = state ? "👇" : "👆"
         but.title = state ? "See Solution": "Hide Solution"
         sol.hidden = state
-        s.state = state
+        this.solutions_states[sol_id] = state
     }
 }
 

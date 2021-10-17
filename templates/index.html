@@ -6,12 +6,17 @@
 </h1>
 
 {{ section.content | safe }}
-
+<ul>
 {% for subsection in section.subsections %}
   {% set subsection_item = get_section(path=subsection) %}
     <li><a href="{{ subsection_item.permalink }}">{{ subsection_item.title }}</a></li>
+    <ul>
+      {% for page in subsection_item.pages %}
+      <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+      {% endfor %}
+    </ul>
 {% endfor %}
-
+</ul>
 <!-- {{ __tera_context }} -->
   
 {% endblock content %}
