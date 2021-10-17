@@ -125,6 +125,25 @@ h2:before {
     text-align: center;
 }
 
+/* tables style */
+
+table, th, td {
+	border: 1px black solid;
+}
+
+table {
+    width: 100%;
+	border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.15rem;
+}
+
+tr:hover {
+    background-color: lightgray;
+}
+
 /* footnote */ 
 
 .footnote {
