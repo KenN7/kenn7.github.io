@@ -1,6 +1,6 @@
 +++
 title = "Algorithms, Session 2, Data Structures"
-date = 2021-10-14
+date = 2021-10-15
 description = "v1.0.0"
 +++
 
