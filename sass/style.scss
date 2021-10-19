@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: CMR;
-    src: url(/fonts/cmuserif_roman_macroman/cmunrm-webfont.woff);
+    src: url('/fonts/cmuserif_roman_macroman/cmunrm-webfont.woff') format('woff');
 }
 
 @font-face {
     font-family: CMB;
-    src: url(/fonts/cmuserif_bold_macroman/cmunbx-webfont.woff);
+    src: url('/fonts/cmuserif_bold_macroman/cmunbx-webfont.woff') format('woff');
 }
 
 $base-font-family: CMR;
