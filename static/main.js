@@ -1,12 +1,12 @@
 
 function main() {
-    let print_button = document.querySelector("#print_button")
+    const print_button = document.querySelector("#print_button")
     if (print_button) {
         print_button.addEventListener('click', () => window.print() )
     }
 
     // we add the solution toggler only if there are solutions:
-    let show_solution_but = document.querySelectorAll(".solution")
+    const show_solution_but = document.querySelectorAll(".solution")
     //console.log(show_solution_but.length)
     if (show_solution_but.length > 0) {
         let but = document.createElement("button");
@@ -34,7 +34,7 @@ class solutionToggler {
             this.show_all_solutions.addEventListener('click', () => this.toggleAllSolutions())
         }
 
-        let show_solution_but = document.querySelectorAll(".solution_button")
+        const show_solution_but = document.querySelectorAll(".solution_button")
 
         for (const [i,but] of show_solution_but.entries()) {
             const solution = selectSibling(but, ".solution")
