@@ -13,8 +13,8 @@ Compute the complexity of the following functions
 ```python
 def sequence(n):
     n = n + 1
-    n = n + 4
-    n = n * 4
+    n = n + 2
+    n = n * 6
     n = n ** 10
     n = n // 2
     return n
@@ -68,6 +68,12 @@ def b(t):
         for i in range(n):
             t[i] *= t[i]
 ```
+
+{% solution() %}
+Solution:
+O(n)
+{% end %}
+
 ---
 
 ```python
@@ -81,6 +87,11 @@ def h(t):
             j //= 2
 ```
 
+{% solution() %}
+Solution:
+O(n log n)
+{% end %}
+
 ## **Master theorem**
 
 ```python
@@ -92,6 +103,11 @@ def foo(n):
     foo(n/2)
 ```
 
+{% solution() %}
+Solution:
+a = 2, b = 2, d = 0, bd = 1 < a, case 3, $O(n^{\log_2 (2)}) = O(n)$
+{% end %}
+
 ---
 
 ```python
@@ -102,6 +118,11 @@ def foo2(n):
     foo(n/2)
     foo(n/2)
 ```
+
+{% solution() %}
+Solution:
+a = 2,b = 2,d = 1, bd = 2 = a, case 1, $O(n \log n)$
+{% end %}
 
 ---
 

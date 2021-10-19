@@ -25,7 +25,21 @@ For example, suppose the input is as follows, where value in each row represent 
 ```
 The wall would then look like this: 
 
-**TODO!!!!**
+<canvas width=400 height=240 id="brick-wall"></canvas>
+<script>
+const ctx = document.getElementById('brick-wall').getContext('2d')
+const array = [[3,5,1,1],[2,3,3,2],[5,5],[4,4,2],[1,3,3,3],[1,1,6,1,1]]
+const rect_size = 40
+ctx.beginPath()
+for (const [y,subarray] of array.entries()) {
+    let part_sum = 0
+    for (const [x,val] of subarray.entries()) {
+        ctx.strokeRect(part_sum*rect_size,y*rect_size,rect_size*val,rect_size)
+        part_sum += val
+    }
+}
+ctx.closePath()
+</script>
 
 The best we can do here is to draw a line after the eighth brick, which will only require cutting through the bricks in the third and fifth row.
 Given an input consisting of brick lengths for each row such as the one above, returns the fewest number of bricks that must be cut to create a vertical line.

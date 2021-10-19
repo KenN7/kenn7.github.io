@@ -12,24 +12,12 @@ Given an array of integers, return a new array such that each element at index $
 
 Follow-up: what if you can't use division?
 
-{% solution() %}
-Here is the code:
-```python
-def sequence(n):
-    n = n + 1
-    n = n + 4
-    n = n * 4
-    n = n ** 10
-    n = n // 2
-    return n
-```
-
-{% end %}
 
 ## **Locate smallest window to be sorted**
 
 Given an array of intergers that are out of order, determine the bounds of the smallest window that must be sorted in order for the entire array to be sorted. For example given $[3,7,5,6,9]$, you should return $(1,3)$.
 
+<!-- 
 ## **Calculate maximum subarray sum**
 
 Given an array of numbers, find the maximum sum of any contiguous subarray of the array. For example, given the array $[34,-50,42,14,-5,86]$, the maximum sum would be $137$, since we would take elements $42,14,-5$ and $86$. Given the array $[-5,-1,-8,-9]$, the maximum sum would be $0$, since we would choose not to take any elements.
@@ -43,7 +31,8 @@ Given an array of integers, return a new array where each element in the new arr
 - There is $1$ smaller element to the right of $6$
 - There is no smaller element to the right of $1$
 
----
+--- 
+-->
 
 # Linked lists
 
@@ -194,6 +183,8 @@ To compute the similarity between two websites you should compute the number of 
 
 A regular number in mathematics is defined as one which evenly divides some power of $60$. Equivalently, we can say that a regular number is one whose only prime divisors are $2,3$ and $5$. These numbers have had many applications, from helping ancient Babylonians keep time to tuning instruments according to the diatonic scale. Given an integer $n$, write a program that generates, in order, the first $n$ regular numbers.
 
+<!-- 
+
 ## **Build a Huffman tree**
 
 Huffman coding is a method of encoding characters based on their frequency. Each letter is assigned a variable-length binary string, such as `0101` or `111110`, where shorter lengths correspond to more common letters. To accomplish this, a binary tree is built such that the path from the root to any leaf uniquely maps to a character. When traversing the path, descending to a left child correspond to a `0` in the prefix, while descending right corresponds to `1`. Here is an example tree (note that only the leaf nodes have letters):
@@ -212,6 +203,8 @@ Huffman coding is a method of encoding characters based on their frequency. Each
 
 With this encoding, "cats" would be represented as `0000110111`. Given a dictionary of character frequencies (for example `{"a":3, "c":6, "e":8, "f":2}`), build a Huffman tree, and use it to determine a mapping between characters and their encoded binary strings.
 
-**(TODO:  tree, page 114)**
+**(TODO:  tree, page 114)** 
+
+-->
 
 
