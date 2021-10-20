@@ -13,7 +13,7 @@ There exists a staircase with $n$ steps which you can climb up either 1 or 2 ste
 -  $1$,$1$,$2$
 -  $2$,$2$
 
-Follow-up: what if, instead of being able to climb 1 or 2 stemps at a time, you could climb any number from a set of positive integers $X$ ? For example, if $X$ = $1$,$3$,$5$ you could climb 1,3 or 5 steps at a time.
+Follow-up: what if, instead of being able to climb 1 or 2 steps at a time, you could climb any number from a set of positive integers $X$? For example, if $X$ = $1$,$3$,$5$ you could climb 1,3 or 5 steps at a time.
 
 ## **Number of ways to decode a string**
 Given the mapping $a$=$1$, $b$=$2$, $\ldots$, $z$=$26$, and an encoded message, count the number of ways it can be decoded. For example the message "`111`" should be $3$, since it could be decoded as "`aaa`", "`ka`" and "`ak`".
