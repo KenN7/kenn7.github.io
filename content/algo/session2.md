@@ -71,7 +71,7 @@ Given a string of round, curly, and square opening and closing brackets, return 
 
 Similar problem: [aoc 2017 day 9](https://adventofcode.com/2017/day/9)
 
-## **Compute maximum of k-length subarrays**
+<!-- ## **Compute maximum of k-length subarrays**
 
 Given an array of integers and a number $k$, where $1 \leq k \leq$ array length, compute the maximum values of each subarray of length $k$. For example, let's say the array is $[10,5,2,7,8,7]$ and $k=3$. We should get $[10,7,8,8]$, since:
 -  $10$ = $\max([10,5,2])$
@@ -79,7 +79,7 @@ Given an array of integers and a number $k$, where $1 \leq k \leq$ array length,
 -  $8$ = $\max([2,7,8])$
 -  $8$ = $\max([7,8,7])$
 
-Do this in $O(n)$ time and $O(k)$ space. You can modify the input array in-place and you do not need to store the result. You can simply print them out as you compare them.
+Do this in $O(n)$ time. You can modify the input array in-place and you do not need to store the result. You can simply print them out as you compare them. -->
 
 ## **Reconstruct array using +/- signs**
 
@@ -103,7 +103,7 @@ graph TB
     D-->G((1))
 {% end %}
 
-## **Reconstruct tree from pre-order and in-order traversals**
+<!-- ## **Reconstruct tree from pre-order and in-order traversals**
 
 Given pre-order and in-order traversals of a binary tree, write a function to reconstruct the tree. For example, given the following pre-order traversal: $[a,b,d,e,c,f,g]$ and the following in-order traversal: $[d,b,e,a,f,c,g]$. You should return the following tree:
 
@@ -115,7 +115,7 @@ Given pre-order and in-order traversals of a binary tree, write a function to re
       B-->E((e))
       C-->F((f))
       C-->G((g))
-{% end %}
+{% end %} -->
 
 ## **Evaluate arithmetic tree**
 
@@ -146,6 +146,9 @@ Given a binary tree, return the level of the tree that has the minimum sum. The 
 {% end %}
 
 In this tree, level $0$ has sum $1$, level $1$ has sum $5$ and level $2$ has sum $9$, so the level with the minimum sum is $0$.
+
+
+<!-- 
 
 ---
 
@@ -183,7 +186,6 @@ To compute the similarity between two websites you should compute the number of 
 
 A regular number in mathematics is defined as one which evenly divides some power of $60$. Equivalently, we can say that a regular number is one whose only prime divisors are $2,3$ and $5$. These numbers have had many applications, from helping ancient Babylonians keep time to tuning instruments according to the diatonic scale. Given an integer $n$, write a program that generates, in order, the first $n$ regular numbers.
 
-<!-- 
 
 ## **Build a Huffman tree**
 
