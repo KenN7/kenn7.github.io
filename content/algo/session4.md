@@ -63,10 +63,10 @@ For example, given the regular expression `ra.` and the string `ray`, your funct
 Given the regular epxression `.*at` and the string `chat`, your finction should return `True`. The same regular expression on the string `chats` should return `False`.
 
 ## **Find array extremes efficiently**
-Given an array of number of length $n$, find both the minimum and maximum using less than $2 * (n-2)$ comparisons.
+Given an array of numbers of length $n$, find both the minimum and maximum using less than $2 * (n-2)$ comparisons.
 
 ## **Play Nim**
-The game of Num is played as follows. Starting with three heaps, each containing a variable numbers of items, two players take turns removing one or more items from a single pile. the player who eventually is forced to take the last stone loses. For example, if the initial head sizes are $3$,$4$ and $5$, a game could be played as shown below:
+The game of Nim is played as follows. Starting with three heaps, each containing a variable numbers of items, two players take turns removing one or more items from a single pile. the player who eventually is forced to take the last stone loses. For example, if the initial heap sizes are $3$, $4$ and $5$, a game could be played as shown below:
 
 | A | B | C |   Action |
 | :---: |  :---:  | :-----: |   :---------------  |
@@ -90,7 +90,7 @@ Given a binary search tree, find the floor and ceiling of a given integer. The f
 Given a sorted array, convert it into a height-balanced binary search tree.
 
 ## **Construct all BSTs with $n$ nodes**
-Given an integer $n$, construct all possible binary search trees with $n$ ,nodes where all values from $[1, \ldots, n]$ are used.
+Given an integer $n$, construct all possible binary search trees with $n$ nodes where all values from $[1, \ldots, n]$ are used.
 For example, given $n$ = $3$, return the following trees:
 {% mermaid() %}
 graph TB

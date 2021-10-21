@@ -7,7 +7,7 @@ description = "v1.0.0"
 # Pathfinding
 
 ## **Dijkstra's algorithm**
-A network consists of nodes labeled $0$ to $n$. You are given a list of edges $(a,b,t)$ describing the tume $t$ in seconds it takes for a message to be sent from node $a$ to node $b$. Whenever a node receives a message, it immediately passes the message on to a neighboring node, if possible.
+A network consists of nodes labeled $0$ to $n$. You are given a list of edges $(a,b,t)$ describing the time $t$ in seconds it takes for a message to be sent from node $a$ to node $b$. Whenever a node receives a message, it immediately passes the message on to a neighboring node, if possible.
 Assuming all nodes are connected, determine how long it will take for every node to receive a message that begins at node $0$.
 For example, given $n$ = $5$ and the following graph:
 {% mermaid() %}
