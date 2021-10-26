@@ -9,7 +9,7 @@ weight = 1
 
 In groups, you are going to make a small presentation on a specific 
 implementation of a NoSQL database of your choice, along with a 
-proof on concept and technical report.
+proof of concept and technical report.
 
 # Choosing a database and testing it 
 
@@ -20,7 +20,7 @@ Then prepare a proof of concept project using your database:
 - Choose a domain of application (e.g. blog articles, social media comments,
   recipe list, store inventory, etc.)
 - Present the data to be saved and your data model
-- Build a small script (or app) to interract with the database, and present basic
+- Build a small script (or app) to interact with the database, and present basic
 operations one would want to make.
 - Make a tutorial on how to install and use the database and your basic app. 
 
@@ -34,7 +34,7 @@ database you chose including (but not exclusively): Implementation, type of DB
 (key-value, document, column, graph), basic features of this type of DB, 
 consistency model, implication of such model, features of the specific
 implementation of your DB, specificities of your DB, 
-uses cases, presentation on how to interract with the database (API?, langage?)
+use cases, presentation on how to interact with the database (API?, language?)
 (with examples).
 
 You will also present your proof of concept, including data model and basic

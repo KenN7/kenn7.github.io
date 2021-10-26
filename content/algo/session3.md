@@ -8,7 +8,7 @@ weight = 3
 # Hash Tables
 
 ## **Cut brick wall**
-A wall consists of several rows of bricks of various integer lengths and uniform heigth. Your goal is to find a vertical line going from the top to the bottom of the wall that cuts through the fewest number of bricks. If the line goes through the edge between two bricks, this does not count as a cut.
+A wall consists of several rows of bricks of various integer lengths and uniform height. Your goal is to find a vertical line going from the top to the bottom of the wall that cuts through the fewest number of bricks. If the line goes through the edge between two bricks, this does not count as a cut.
 For example, suppose the input is as follows, where value in each row represent the lengths of bricks in that row:
 ```
 [[3,5,1,1],
@@ -61,7 +61,7 @@ You have a large array, most of whose elements are zero. Create a more space-eff
 - `get(i)`: get the value at index `i`.
 
 ## **Implement an LRU cache**
-Implement an LRU (Least Recently Used) cache. The cache should be able to be initialized with cache size $n$ , and provie the following methods:
+Implement an LRU (Least Recently Used) cache. The cache should be able to be initialized with cache size $n$, and provide the following methods:
 - `set(key, value)`: set `key` to `value`. If there are already $n$ items in the cache and we are adding a new item, also remove the least recently used item.
 - `get(key)`: get the value at `key`. If no such key exists, return null.
 Each operation should run in $O(1)$ time.
