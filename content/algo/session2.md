@@ -2,6 +2,7 @@
 title = "Algorithms, Session 2, Data Structures"
 date = 2021-10-15
 description = "v1.0.0"
+weight = 2
 +++
 
 # Arrays
@@ -166,21 +167,6 @@ Compute the running median of a sequence of numbers. That is, given a stream of 
 2
 2
 ```
-
-## **Find most similar websites**
-
-You are given a list of (`website`, `user`) pairs that represent users visiting websites. Come up with a program that identifies the top $k$ pairs of websites with the greatest similarity. For example, suppose $k=1$, and the list of tuples is:
-
-```
-[('google.com', 1), ('google.com', 3), ('google.com', 5),
-('pets.com', 1), ('pets.com', 2), ('yahoo.com', 6),
-    ('yahoo.com', 2), ('yahoo.com', 3),('yahoo.com', 4),
-    ('yahoo.com', 5), ('wikipedia.org', 4), ('wikipedia.org', 5),
-    ('wikipedia.org', 6),('wikipedia.org', 7), ('bing.com', 1),
-    ('bing.com', 3),('bing.com', 5),('bing.com', 6)]
-```
-
-To compute the similarity between two websites you should compute the number of users they have in common divided by the number of users who have visited either site in total (this is known as the Jaccard index). For example, in this case, we would conclude that `google.com` and `bing.com` are the most similar with a score of $3/4$ or $0.75$
 
 ## **Generate regular numbers**
 

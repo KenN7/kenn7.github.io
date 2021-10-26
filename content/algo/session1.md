@@ -2,6 +2,7 @@
 title = "Algorithms, Session 1, Complexity and divide and conquer"
 date = 2021-10-14
 description = "v1.0.0"
+weight = 1
 +++
 
 # Complexity

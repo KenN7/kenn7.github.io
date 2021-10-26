@@ -2,6 +2,7 @@
 title = "Algorithms, Session 3, Hash Tables"
 date = 2021-10-16
 description = "v1.0.0"
+weight = 3
 +++
 
 # Hash Tables

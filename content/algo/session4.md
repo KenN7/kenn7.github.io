@@ -2,6 +2,7 @@
 title = "Algorithms, Session 4, Search, Recursion and Binary Search Trees"
 date = 2021-10-17
 description = "v1.0.0"
+weight = 4
 +++
 
 # Backtracking

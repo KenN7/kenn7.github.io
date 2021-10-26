@@ -2,6 +2,7 @@
 title = "Algorithms, Session 5, Pathfinding"
 date = 2021-10-18
 description = "v1.0.0"
+weight = 5
 +++
 
 # Pathfinding

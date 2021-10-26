@@ -2,6 +2,7 @@
 title = "Algorithms, Session 6, Dynamic Programming"
 date = 2021-10-19
 description = "v1.0.0"
+weight = 6
 +++
 
 # Dynamic Programming
