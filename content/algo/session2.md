@@ -43,7 +43,7 @@ Given the head of singly linked list, reverse it in place.
 
 ## **Add two linked lists that represent numbers**
 
-We can represent an integer in a linked list format by having each node represent a digit in the number. The nodes are connected in reverse order, such that the number $54321$ is represented by the following linked list: $5 \rightarrow 4 \rightarrow 3 \rightarrow 2 \rightarrow 1$. Given two linked lists in this format, return their sum. For example, given $9 \rightarrow 9$ and $5 \rightarrow 2$ you should return $124$ $(99+25)$ as $4  \rightarrow 2 \rightarrow 1$.
+We can represent an integer in a linked list format by having each node represent a digit in the number. The nodes are connected in reverse order, such that the number $54321$ is represented by the following linked list: $5 \leftarrow 4 \leftarrow 3 \leftarrow 2 \leftarrow 1$. Given two linked lists in this format, return their sum. For example, given $9 \rightarrow 9$ and $5 \rightarrow 2$ you should return $124$ $(99+25)$ as $4  \rightarrow 2 \rightarrow 1$.
 
 ## **Rearrange a linked list to alternate high-low**
 
