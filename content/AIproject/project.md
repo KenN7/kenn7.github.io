@@ -17,7 +17,6 @@ real time. We want you to create a Proof of Concept of this App.
 
 - Detect as many faces as possible in real time.
 - Detect Mood/Head Orientation to pick suitable emoticon.
-- We want the intellectual property so we need to create and train the AI ourselves.
 - Use of existing public datasets is allowed.
 
 # Evaluation
@@ -29,9 +28,10 @@ To be done in pairs
 - Multiple face detection (6 points)
     - in real time (2 points)
 - Mood/Head Orientation detection (2 points)
-    - in real time (1 points)
-- Emoticons placement (1 points)
-- The App runs on a phone ! (1 points)
+    - in real time (1 point)
+- Emoticons placement (1 point)
+- The App runs on a phone ! (1 point)
+- Train the AI ourselves (using public datasets) (1 point)
 - Technical report, documentation, and presentation (7 points)
 
 The report, presentation and sources, should be uploaded to claco.
