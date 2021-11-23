@@ -31,7 +31,7 @@ Advent Of Code is an advent calendar for coding exercises, each day of december,
 a new problem is unlocked and available for solving. Each problem has 2 levels,
 in order to get a double *gold* star, you need to solve both levels of the problem.
 
-In groups on $n$ student you should get at least $5 \cdot n$ double gold stars
+In groups of $n$ student you should get at least $5 \cdot n$ double gold stars
 (with $ 0 < n \leq 3$).
 
 Those exercises account for 20% of your final grade.
