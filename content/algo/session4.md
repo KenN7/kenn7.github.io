@@ -1,5 +1,5 @@
 +++
-title = "Algorithms, Session 4, Search, Recursion and Binary Search Trees"
+title = "Algorithms, Session 4, Recursion, Search"
 date = 2021-10-17
 description = "v1.0.0"
 weight = 4
@@ -25,7 +25,7 @@ One way to unlock an Android phone is by swiping in a specific pattern across a 
       7 --- 8
       8 --- 9
 {% end %}
-**TODO: improve graph!!**
+<!-- **TODO: improve graph!!** -->
 
 For a pattern to be valid, it must satisfy the following criteria:
 - All of its keys must be distinct.
@@ -82,6 +82,8 @@ In other words, to start, the first player takes thress items from pile $B$. The
 Given a list of non-zero starting values `[a, b, c]`, and assuming optimal play, determine whether the first player has a forced win.
 
 
+<!-- 
+
 # Binary Search Trees
 
 ## **Find floor and ceiling**
@@ -128,7 +130,8 @@ subgraph fourth tree
     B-->E
     B-->C((2))
 end
-{% end %}
+{% end %} 
+
+-->
 
 
-<!-- **TODO: clear graph !!!** -->

@@ -1,5 +1,5 @@
 +++
-title = "Algorithms, Session 5, Pathfinding"
+title = "Algorithms, Session 5, Dijkstra and A*"
 date = 2021-10-18
 description = "v1.0.0"
 weight = 5
