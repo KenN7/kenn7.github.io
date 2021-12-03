@@ -10,9 +10,24 @@ weight = 4
 ## **Compute flight itinerary**
 Given an unordered list of flights taken by someone, each represented as `(origin, destination)` pairs, and a starting airport, compute a possible itinerary. If no such itinerary exists, return `null`. All flights must be used in the itinerary. For example, given the list of flights `[('SFO', 'HKO'), ('YYZ', 'SFO'), ('YUL', 'YYZ'), ('HKO', 'ORD')]` and starting at airport `YUL`, you may return the list `[('YUL', 'YYZ'),('YYZ', 'SFO'),('SFO', 'HKO'),('HKO', 'ORD')]`. Given `[('SFO', 'COM'),('COM', 'YYZ')]` and starting at airport `COM` you should return `null`.
 
-## **Solve Sudoku**
-Sudoku is a puzzle where you're given a 9 by 9 grid partially filled with digits. The objective is to fill the grid subject to the constraint that every row, colum, and box (3 by 3 subgrid) must contain all of the digits from 1 to 9.
-Implement an efficient sudoku solver.
+## **The N-Queens problems**
+The N-Queens problem asks you to find an arrangment so that $N$ queens can be
+placed on a $N \cdot N$ chess board without being able to directly attack each
+other.
+Write a program that displays one possible arrangment for the N-Queens problem.
+
+You can use the following function to display your solution:
+```python
+def print_board(queens):
+    board = [["." for i in range(len(queens))] for i in range(len(queens))]
+    for i in range(len(queens)):
+        board[queens[i]][i] = "Q"
+
+    for l in board:
+        for c in l:
+            print(c, end=" ")
+        print()
+```
 
 ## **Count Android unlock combinations**
 One way to unlock an Android phone is by swiping in a specific pattern across a $1$ - $9$ keypad, which looks like this:
@@ -34,6 +49,9 @@ For a pattern to be valid, it must satisfy the following criteria:
 For example, $4$ - $2$ - $1$ - $7$ is a valid pattern, whereas $2$ - $1$ - $7$ is not.
 Find the total number of valid unlock patterns of lenght $n$ where $1$ $\leq$ $n$ $\leq$ $9$.
 
+## **Solve Sudoku**
+Sudoku is a puzzle where you're given a 9 by 9 grid partially filled with digits. The objective is to fill the grid subject to the constraint that every row, colum, and box (3 by 3 subgrid) must contain all of the digits from 1 to 9.
+Implement an efficient sudoku solver.
 
 # Recursion
 
