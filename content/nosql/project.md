@@ -26,7 +26,7 @@ operations one would want to make.
 
 # Presentation
 
-You prepare a 15 minutes presentation (followed by question from the audience)
+You prepare a 15-minute presentation (followed by questions from the audience)
 for the last course about one NoSQL database. 
 
 During this presentation, you will introduce the basic aspects of the

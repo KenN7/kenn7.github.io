@@ -9,25 +9,23 @@ weight = 1
 
 In groups, you are going to make a small presentation on a piece of software
 or technology or your choice.
-We will measure you capacity to analyse and transfer your knowledge about
+We will measure your capacity to analyse and transfer your knowledge about
 technical subjects.
 
 
-# Choosing a project 
-
 # Presentation
 
-You prepare a 15 minutes presentation (followed by question from the audience)
+You prepare a 15-minute presentation (followed by questions from the audience)
 that will be presented during the last two courses. 
 
 During this presentation, you will present a technology or piece of software
 in the light of the different broad topics you encountered during the course.
 Your presentation should start with a presentation of the subject in board terms
 with some context. 
-Depending of your choice of subject, if your subject is very broad, you will
+Depending on your choice of subject, if your subject is very broad, you will
 focus on a specific application or aspect of the subject.
 You present a use case or specific application and then
-make an analysis, in terms of software architecture, security
+make an analysis, in terms of software architecture, quality, security
 concerns, and deliverability concerns.
 
 You are expected to dig in to the subject and should not be superficial.
@@ -35,8 +33,12 @@ You are expected to dig in to the subject and should not be superficial.
 
 # Evaluation
 
-You will be graded based on the quality of your presentation
+You will be graded based on your presentations quality, the technical relevance
+of the subject, and the context.
+
+
 The presentation should be uploaded to moodle before **09/05/2022 13:00**.
+
 
 The presentation material will then be available for everyone, some questions 
 of the final exam quizz may be based on information you will learn during those
