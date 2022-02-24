@@ -30,6 +30,10 @@ concerns, and deliverability concerns.
 
 You are expected to dig in to the subject and should not be superficial.
 
+Your presentation should end by presenting 3 questions (and answers) that
+one might ask about your work.
+
+Those questions may be selected as part as the final exam.
 
 # Evaluation
 
