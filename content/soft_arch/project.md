@@ -41,7 +41,7 @@ You will be graded based on your presentations quality, the technical relevance
 of the subject, and the context.
 
 
-The presentation should be uploaded to moodle before **09/05/2022 13:00**.
+The presentation should be uploaded to moodle before **16/05/2022 13:00**.
 
 
 The presentation material will then be available for everyone, some questions 
