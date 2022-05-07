@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSL course material</title>
+
+  <link rel="preload" as="font" href="/fonts/cmuserif_roman_macroman/cmunrm-webfont.woff" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/cmuserif_bold_macroman/cmunbx-webfont.woff" type="font/woff" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="/main.js"></script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+  
+
+
+</head>
+
+<body>
+  <div class="container">
+    
+<h1 class="title">
+  Algorithms, Session 1, Complexity and divide and conquer
+</h1>
+<div class="sub_grid">
+  <div><button id="print_button" class="no-print button_effect">🖨️(as pdf)</button></div>
+  <div>v1.0.0</div>
+  <div class="subtitle">2021-10-14</div>
+  <div id="all_sol_but_div"></div>
+</div>
+
+<h1 id="complexity">Complexity</h1>
+<h2 id="simple-exercices"><strong>Simple exercices</strong></h2>
+<p>Compute the complexity of the following functions</p>
+<pre style="background-color:#2b303b;">
+<code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">sequence</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">n</span><span style="color:#c0c5ce;">):
+    n = n + </span><span style="color:#d08770;">1
+    </span><span style="color:#c0c5ce;">n = n + </span><span style="color:#d08770;">2
+    </span><span style="color:#c0c5ce;">n = n * </span><span style="color:#d08770;">6
+    </span><span style="color:#c0c5ce;">n = n ** </span><span style="color:#d08770;">10
+    </span><span style="color:#c0c5ce;">n = n // </span><span style="color:#d08770;">2
+    </span><span style="color:#b48ead;">return </span><span style="color:#c0c5ce;">n
+</span></code></pre><div class="solution_group">
+<button class="solution_button no-print" title="See solution">👇</button>
+<div class="solution hidden">
+    <p>Solution:
+O(1)</p>
+
+</div>
+</div>
+<hr />
+<pre style="background-color:#2b303b;">
+<code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">loop1</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">n</span><span style="color:#c0c5ce;">):
+    n = n + </span><span style="color:#d08770;">1
+    </span><span style="color:#c0c5ce;">i = </span><span style="color:#d08770;">0
+    </span><span style="color:#b48ead;">while </span><span style="color:#c0c5ce;">i &lt; n:
+        i = i + </span><span style="color:#d08770;">1
+    </span><span style="color:#c0c5ce;">n = n * n
+    </span><span style="color:#b48ead;">return </span><span style="color:#c0c5ce;">n
+</span></code></pre><div class="solution_group">
+<button class="solution_button no-print" title="See solution">👇</button>
+<div class="solution hidden">
+    <p>Solution:
+O(n)</p>
+
+</div>
+</div>
+<hr />
+<pre style="background-color:#2b303b;">
+<code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">loop2</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">n</span><span style="color:#c0c5ce;">):
+    n = n + </span><span style="color:#d08770;">1
+    </span><span style="color:#c0c5ce;">i = </span><span style="color:#d08770;">1
+    </span><span style="color:#b48ead;">while </span><span style="color:#c0c5ce;">i &lt; n:
+        i = </span><span style="color:#d08770;">2 </span><span style="color:#c0c5ce;">* i
+    n = n * n
+    </span><span style="color:#b48ead;">return </span><span style="color:#c0c5ce;">n
+</span></code></pre><div class="solution_group">
+<button class="solution_button no-print" title="See solution">👇</button>
+<div class="solution hidden">
+    <p>Solution:
+O(log n)</p>
+
+</div>
+</div>
+<hr />
+<pre style="background-color:#2b303b;">
+<code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">b</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">t</span><span style="color:#c0c5ce;">):
+    n = </span><span style="color:#96b5b4;">len</span><span style="color:#c0c5ce;">(t)
+    </span><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">j </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span style="color:#c0c5ce;">(</span><span style="color:#d08770;">4</span><span style="color:#c0c5ce;">):
+        </span><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">i </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span style="color:#c0c5ce;">(n):
+            t[i] *= t[i]
+</span></code></pre><div class="solution_group">
+<button class="solution_button no-print" title="See solution">👇</button>
+<div class="solution hidden">
+    <p>Solution:
+O(n)</p>
+
+</div>
+</div>
+<hr />
+<pre style="background-color:#2b303b;">
+<code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">h</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">t</span><span style="color:#c0c5ce;">):
+    n = </span><span style="color:#96b5b4;">len</span><span style="color:#c0c5ce;">(t)
+    </span><span style="color:#b48ead;">for </span><span style="color:#c0c5ce;">i </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span style="color:#c0c5ce;">(n):
+        t[i] = </span><span style="color:#d08770;">0
+        </span><span style="color:#c0c5ce;">j = n
+        </span><span style="color:#b48ead;">while </span><span style="color:#c0c5ce;">j &gt; </span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">:
+            t[i] += i*j
+            j //= </span><span style="color:#d08770;">2
+</span></code></pre><div class="solution_group">
+<button class="solution_button no-print" title="See solution">👇</button>
+<div class="solution hidden">
+    <p>Solution:
+O(n log n)</p>
+
+</div>
+</div>
+<h2 id="master-theorem"><strong>Master theorem</strong></h2>
+<pre style="background-color:#2b303b;">
+<code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">foo</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">n</span><span style="color:#c0c5ce;">):
+    </span><span style="color:#b48ead;">if </span><span style="color:#c0c5ce;">n &lt;= </span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">:
+        </span><span style="color:#b48ead;">return
+    </span><span style="color:#bf616a;">doOhOne</span><span style="color:#c0c5ce;">() </span><span style="color:#65737e;"># doOhOne() runs in O(1) time
+    </span><span style="color:#bf616a;">foo</span><span style="color:#c0c5ce;">(n/</span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">)
+    </span><span style="color:#bf616a;">foo</span><span style="color:#c0c5ce;">(n/</span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">)
+</span></code></pre><div class="solution_group">
+<button class="solution_button no-print" title="See solution">👇</button>
+<div class="solution hidden">
+    <p>Solution:
+a = 2, b = 2, d = 0, bd = 1 &lt; a, case 3, $O(n^{\log_2 (2)}) = O(n)$</p>
+
+</div>
+</div>
+<hr />
+<pre style="background-color:#2b303b;">
+<code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">foo2</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">n</span><span style="color:#c0c5ce;">):
+    </span><span style="color:#b48ead;">if </span><span style="color:#c0c5ce;">n &lt;= </span><span style="color:#d08770;">1</span><span style="color:#c0c5ce;">:
+        </span><span style="color:#b48ead;">return
+    </span><span style="color:#bf616a;">doOhN</span><span style="color:#c0c5ce;">() </span><span style="color:#65737e;"># doOhN() runs in O(n) time
+    </span><span style="color:#bf616a;">foo</span><span style="color:#c0c5ce;">(n/</span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">)
+    </span><span style="color:#bf616a;">foo</span><span style="color:#c0c5ce;">(n/</span><span style="color:#d08770;">2</span><span style="color:#c0c5ce;">)
+</span></code></pre><div class="solution_group">
+<button class="solution_button no-print" title="See solution">👇</button>
+<div class="solution hidden">
+    <p>Solution:
+a = 2,b = 2,d = 1, bd = 2 = a, case 1, $O(n \log n)$</p>
+
+</div>
+</div>
+<hr />
+<ul>
+<li>$T(n) = 4T(n/2) + n^2$</li>
+<li>$T(n) = 16T(n/4) + n$</li>
+<li>$T(n) = 7T(n/3) + n^2$</li>
+</ul>
+
+
+
+  </div> 
+  <div class="footer">
+    
+<hr>
+<p class="footnote">Found an error? Let us know: 
+    <a href="https://github.com/kenn7/kenn7.github.io/">
+        https://github.com/kenn7/kenn7.github.io/
+    </a>
+</p>
+
+
+  </div>
+</body>
+
+</html>
