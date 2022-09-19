@@ -51,4 +51,4 @@ use basic operations.
 You will be graded based on the quality of your presentation, report and proof
 of concept.
 
-The report, presentation and sources, should be uploaded to claco before **22/10/2021 20:00**.
+The report, presentation and sources, should be uploaded to claco before **05/12/2022 20:00**.
