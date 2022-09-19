@@ -1,8 +1,8 @@
 +++
 title = "NoSQL Databases project"
-date = 2021-10-10
+date = 2022-10-10
 description = "v1.0.0"
-weight = 1
+weight = 2
 +++
 
 # Introduction
