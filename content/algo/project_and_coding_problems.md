@@ -1,7 +1,7 @@
 +++
 title = "Algorithms, Project and coding problems."
-date = 2021-12-01
-description = "v1.0.0"
+date = 2022-10-06
+description = "v1.0.1"
 weight = 7
 +++
 
@@ -18,7 +18,7 @@ Your presentation should be 15min long, it should be clear,
 entertaining, and allow everyone to understand what is the concept 
 you are talking about and why it exists.
 
-The presentation account for 80% of your final grade and 
+The presentation account for 70% of your final grade and 
 will take place during the last session of the course.
 
 # Coding problem assignement
@@ -26,15 +26,15 @@ will take place during the last session of the course.
 ## Introduction
 
 You should solve some problems from [Advent Of Code](https://adventofcode.com/)
-2021 edition.
+2022 edition (starting december 1).
 Advent Of Code is an advent calendar for coding exercises, each day of december,
 a new problem is unlocked and available for solving. Each problem has 2 levels,
 in order to get a double *gold* star, you need to solve both levels of the problem.
 
-In groups of $n$ student you should get at least $5 \cdot n$ double gold stars
+In groups of $n$ student you should get at least $7 \cdot n$ double gold stars
 (with $ 0 < n \leq 3$).
 
-Those exercises account for 20% of your final grade.
+Those exercises account for 30% of your final grade.
 
 ## Submission
 
