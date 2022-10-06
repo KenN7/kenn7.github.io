@@ -9,11 +9,11 @@ weight = 1
 
 ## Basics
 
-Transform this XML tree into an XML document
+### Transform this XML tree into an XML document
 
 <img src="/nosql/xmltree.jpg" width="60%" />
 
-Transform this XML document into a tree
+### Transform this XML document into a tree
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
