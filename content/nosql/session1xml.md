@@ -93,3 +93,23 @@ mozzarella till the last minute.
 - Fat 52g
 - Carbohydrates 101g
 
+## DTD definitions
+
+### Install the XML extension on vscode:
+
+<img src="/nosql/xml_ext.jpg" width="100%" />
+
+### Define a complete DTD for the previous examples (the cookbook and the race track)
+
+Test the validy of your XML documents with your DTD definition.
+
+## XML Schema Definition (XSD)
+
+Write the XML Schema Definition (XSD) and the previous recipe example and validate the document.
+
+## Python XML API
+
+Extract the information from the XML file using the python 
+[`xml.etree.ElementTree` library](https://docs.python.org/3/library/xml.etree.elementtree.html#module-xml.etree.ElementTree)
+and make an interactive command line python app with a menu to list and print 
+the different recipes of a cookbook in the terminal.
