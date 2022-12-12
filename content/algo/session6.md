@@ -6,6 +6,15 @@ weight = 6
 +++
 
 # Dynamic Programming
+## **Coin change problem**
+Implement the solution to the coin change problem (find the best (smallest) set of numbers that
+sum to a value from a given list) that:
+- returns the list of optimal coins
+- handles floating point coins and sum
+
+Do this both using dynamic programming recursive form and tabulation form.
+
+
 ## **Number of ways to climb a staircase**
 There exists a staircase with $n$ steps which you can climb up either 1 or 2 steps at a time. Given $n$, write a function that returns the number of unique ways you can climb the staircase. The order of the steps matters. For example, if $n$ is 4, then there are 5 unique ways:
 -  $1$,$1$,$1$,$1$
