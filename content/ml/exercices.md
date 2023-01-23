@@ -37,11 +37,22 @@ We will ask you to fulfill the following mini-courses available in the
 
 - [Computer vision](https://www.kaggle.com/learn/computer-vision)
 
+# Project
+
+You will have to analyse and train a model using the following dataset:
+
+At the end of your project, you should produce a report that contains:
+all the analysis of the dataset and the feature engineering that you did,
+the performance of your model, and a comparison with different other models.
+The quality of the scientific reasoning is equally as important as the
+performance of your model.
+
 # Assessment
 
-Those exercises have to be done throughout the sessions, remember 
-to **inform the teacher where you left off** after each session.
+You will be assessed of two works:
 
-You will be assessed of the basis of **short written interogations** that will 
-be held at the **beginning of each lab** session. Their content will 
-be based on what was done in the previous lab.
+- A **short written interogation** that will be held at 
+the **end of the last lab** session. 
+The content will be based on the technical content of the kaggle exercices.
+
+- The project: report and code should be uploaded to claco.
