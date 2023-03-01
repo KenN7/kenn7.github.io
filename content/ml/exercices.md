@@ -39,7 +39,9 @@ We will ask you to fulfill the following mini-courses available in the
 
 # Project
 
-You will have to analyse and train a model using the following dataset:
+You will have to analyse and train a model on the following task:
+
+[Xente fraud detection challenge](https://zindi.africa/competitions/xente-fraud-detection-challenge)
 
 At the end of your project, you should produce a report that contains:
 all the analysis of the dataset and the feature engineering that you did,
