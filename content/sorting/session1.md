@@ -29,18 +29,26 @@ Où, `A` est la liste à afficher, `size` donne le nombre d'éléments, `rect_si
 
 # Tris
 
-## Tri bulle
+## Tri bulle et quicksort
 
-Implémenter le tri bulle, tel que vu dans le cours, et afficher la liste non
-triée et la liste triée à l'aide de la fonction de l'exercice précédent.
+- Implémenter le tri bulle, tel que vu dans le cours, et afficher la liste non
+triée et la liste triée sur la console de Processing.
+
+- Implémenter quicksort, tel que vu dans le cours, et afficher la liste non
+triée et la liste triée sur la console de Processing.
+
+Calculer le nombre d'étapes nécéssaires à l'éxécution des tris, donner une
+explication qualitative à cette différence.
 
 ## Tri par selection
 
 Implémenter le [tri par sélection](https://fr.wikipedia.org/wiki/Tri_par_s%C3%A9lection) et afficher le résultat.
 
-## Animation
+## Affichage et Animation
 
-Sauvergarder les états intermédiaire de chaque étape de votre tri afin de pour
+- Afficher les listes non triée et triéé à l'aide de votre fonction de la question 1.2.
+
+- Sauvergarder les états intermédiaire de chaque étape de votre tri afin de pour
 l'afficher étape par étape. Créer une animation à partir de ses étapes.
 
 Utilisez le type `ArrayList<IntList>` afin de sauver une
