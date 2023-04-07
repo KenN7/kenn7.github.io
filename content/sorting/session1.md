@@ -11,11 +11,11 @@ weight = 1
 
 Créer une variable contenant une liste d'entiers, en utilisant `IntList ma_liste;`.
 
-- Remplir cette liste avec des nombre aléatoires
+- Remplir cette liste avec des nombres aléatoires
 
 - Afficher cette liste dans la console de Processing
 
-- Utiliser les `rect` de Processing pour afficher verticalement des rectangles de tailles
+- Utilisez, les `rect` de Processing pour afficher verticalement des rectangles de tailles
   différentes en fonction de la valeur du nombre.
 
 Utilisez pour ça, la [documentation de référence de Processing.](https://processing.org/reference/)
@@ -37,18 +37,18 @@ triée et la liste triée sur la console de Processing.
 - Implémenter quicksort, tel que vu dans le cours, et afficher la liste non
 triée et la liste triée sur la console de Processing.
 
-Calculer le nombre d'étapes nécéssaires à l'éxécution des tris, donner une
+Calculer le nombre d'étapes nécessaires à l'exécution des tris, donner une
 explication qualitative à cette différence.
 
-## Tri par selection
+## Tri par sélection
 
 Implémenter le [tri par sélection](https://fr.wikipedia.org/wiki/Tri_par_s%C3%A9lection) et afficher le résultat.
 
 ## Affichage et Animation
 
-- Afficher les listes non triée et triéé à l'aide de votre fonction de la question 1.2.
+- Afficher les listes non triée et triée à l'aide de votre fonction de la question 1.2.
 
-- Sauvergarder les états intermédiaire de chaque étape de votre tri afin de pour
+- Sauvegarder les états intermédiaires de chaque étape de votre tri afin de pour
 l'afficher étape par étape. Créer une animation à partir de ses étapes.
 
 Utilisez le type `ArrayList<IntList>` afin de sauver une
