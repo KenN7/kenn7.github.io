@@ -15,7 +15,7 @@ Créer une variable contenant une liste d'entiers, en utilisant `IntList ma_list
 
 - Afficher cette liste dans la console de Processing
 
-- Utilisez, les `rect` de Processing pour afficher verticalement des rectangles de tailles
+- Utilisez les `rect` de Processing pour afficher verticalement des rectangles de tailles
   différentes en fonction de la valeur du nombre.
 
 Utilisez pour ça, la [documentation de référence de Processing.](https://processing.org/reference/)
