@@ -11,4 +11,5 @@ page_template = "article-page.html"
 - [Course 2, Security](https://kenn7.github.io/courses/soft_arch/cours2)
 - [Course 3, Maintain, deliver and manage](https://kenn7.github.io/courses/soft_arch/cours3)
 - [Course 4, Code quality](https://kenn7.github.io/courses/soft_arch/cours4)
+- [Course 5, Use cases of programming languages](https://kenn7.github.io/courses/soft_arch/cours5)
 
