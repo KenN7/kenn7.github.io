@@ -18,8 +18,7 @@ Aucun document n’est autorisé.
 
 # Questions
 
-## Parmis les propositions suivantes, laquelle n'est pas une application
-utilisant l'architecture peer-to-peer ?
+## Parmis les propositions suivantes, laquelle n'est pas une application utilisant l'architecture peer-to-peer ?
 - Bitorrent
 - Skype
 - Github
@@ -31,7 +30,7 @@ utilisant l'architecture peer-to-peer ?
 - L'assurance que les données sont toujours disponibles
 - L'assurance que les utilisateurs peuvent avoir accès à leurs données
 
-## Je travaille sur une branche dans un dépot Git, laquelle de ses affirmations est fausse ?
+## Je travaille sur une branche dans un dépot Git, laquelle de ses affirmations est vraie ?
 - Après mon commit, si je push mes modifications mais que quelqu'un d'autre a aussi travaillé sur
   la branche, je vais devoir fusionner les changements.
 - Après mon commit, si je push mes modifications mais que quelqu'un d'autre a aussi travaillé sur
