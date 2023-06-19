@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiTimer</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&family=Roboto+Slab:wght@500&display=swap"
+        rel="stylesheet">
+    <style>
+        h1 {
+            font-family: 'Roboto Slab', serif;
+        }
+        #timer,
+        #total {
+            font-family: 'MuseoModerno', cursive;
+        }
+        #log {
+            font-family: monospace;
+            font-size: small;
+        }
+        #log p {
+                margin: 0;
+        ;}
+    </style>
+</head>
+
+<body>
+    <h1 id='title'></h1>
+    <div id='timer'></div>
+    <div>
+        <a id='pause' href="#"><i class="material-icons">pause</i></a>
+        <a id='refresh' href="#"><i class="material-icons">refresh</i></a>
+        <a id='prev' href="#"><i class="material-icons">skip_previous</i></a>
+        <a id='next' href="#"><i class="material-icons">skip_next</i></a>
+        <a id='next_step' href="#"><i class="material-icons">next_plan</i></a>
+    </div>
+    Total time: <div id='total'> </div>
+
+    <p>Checklist of this step:</p>
+    <ul id="checklist"> </ul>
+
+    log:
+    <div id="log"></div>
+
+    <script>
+        const steps = [
+            {title: 'Accueil', time: 5, check: ["Cotes écrit et eval. cont. encodées sur ECAM+", "En possession de l'enveloppe de cotation", "Check compo jury", "Confidentiel: faire signer NDA (tous sauf lecteurs)", "Inviter à commencer l'épreuve" ]},
+            {title: 'TFE', time: 20, check: []},
+            {title: 'Questions', time: 25, check: []},
+            {title: 'Points TFE', time: 5, check: ["Inviter le public à quitter", "Distribuer feuille cotation", "Encoder cotes (présentation et défense) dans ECAM+"]},
+            {title: 'Préparation question de maturité', time: 5, check: ["Inviter président à préparer question de maturité", "Inviter étudiant à entrer quand c'est fait"]},
+            {title: 'Maturité', time: 25, check: []},
+            {title: 'Points maturité', time: 5, check: ["Inviter le public à quitter", "Distribuer feuille cotation", "Encoder cotes (maturité) dans ECAM+" ]},
+            {title: 'Points totaux', time: 5, check: ["Annoncer et finaliser la cote finale (au demi point près) et valider sur ECAM+", "Confidentiel: Donner NDA au promoteur et faire signer accusé de réception"]},
+        ]
+
+        function get_current_step(minute) {
+            let accumulatedTime = 0
+            for (let step of steps) {
+                accumulatedTime += step.time
+                if (minute < accumulatedTime) {
+                    return {time: accumulatedTime, step: step}
+                }
+            }
+            return {time: accumulatedTime, step: {title: 'Terminé', time: 0, check: []},}
+        }
+
+        function restart() {
+            const start = Date.now()
+            localStorage.setItem('time', String(start))
+            localStorage.setItem('offset_ms', String(0))
+            localStorage.setItem('paused', 'false') // Reset the paused state
+            localStorage.removeItem('pauseStart') // Reset the pause start time
+
+            clearLog();
+            addLog("Restarted");
+        }
+
+        function do_offset(delta_min) {
+            const offset_ms = parseInt(localStorage.getItem('offset_ms'), 10)
+            let pos_offset = Math.max(offset_ms + delta_min * 60000, 0)
+            localStorage.setItem('offset_ms', pos_offset)
+            console.log(offset_ms + delta_min * 60000)
+        }
+
+        function get_time_elap() {
+            const start = parseInt(localStorage.getItem('time'), 10)
+            const offset_ms = parseInt(localStorage.getItem('offset_ms'), 10)
+
+            let now = localStorage.getItem('paused') === 'true' ? parseInt(localStorage.getItem('pauseStart'), 10) : Date.now();
+
+            let msec = now - start + offset_ms;
+
+            let seconde = Math.floor(msec / 1000)
+            msec = msec % 1000
+            let minute = Math.floor(seconde / 60)
+            seconde = seconde % 60
+
+            return [minute, seconde, msec]
+        }
+
+        function do_offset_step() {
+            const [minute, seconde, msec] = get_time_elap();
+            const accumulatedTime = get_current_step(minute);
+
+            do_offset(accumulatedTime.time - minute - 1 + (59 - seconde) / 60 + (999+1 - msec) / 60000);
+            
+            addLog("Next step")
+            
+        }
+
+        function pause() {
+            // If the timer is already paused, unpause it
+            if (localStorage.getItem('paused') === 'true') {
+                const pauseEnd = Date.now();
+                const pauseStart = parseInt(localStorage.getItem('pauseStart'), 10);
+                const pauseDuration = pauseEnd - pauseStart;
+                const start = parseInt(localStorage.getItem('time'), 10);
+                localStorage.setItem('time', String(start + pauseDuration));
+                localStorage.setItem('paused', 'false');
+                addLog("Play (unpause)")
+            }
+            // Otherwise, pause the timer
+            else {
+                localStorage.setItem('pauseStart', String(Date.now()));
+                localStorage.setItem('paused', 'true');
+                addLog("Pause")
+            }
+        }
+
+        function getTime() {
+
+            const [minute, seconde, msec] = get_time_elap();
+
+            const accumulatedTime = get_current_step(minute);
+
+            if (accumulatedTime.step.title !== "Terminé") {
+                return {
+                    step: accumulatedTime.step,
+                    minute: accumulatedTime.time - minute - 1,
+                    seconde: 59 - seconde,
+                    msec: 999 - msec,
+                    total: `${minute}:${formatInt(seconde, 2)}`
+                }
+            }
+            return {
+                step: accumulatedTime.step,
+                minute: minute - accumulatedTime.time,
+                seconde,
+                msec,
+                total: `${minute}:${formatInt(seconde, 2)}`
+            }
+        }
+
+        function formatInt(x, width) {
+            let str = String(x)
+            while (str.length < width) {
+                str = '0' + str
+            }
+            return str
+        }
+
+        function frame() {
+            const time = getTime()
+            const display = `${time.minute}:${formatInt(time.seconde, 2)}:${formatInt(time.msec, 3)}`
+            document.getElementById('timer').innerHTML = display
+            document.getElementById('title').innerHTML = time.step.title
+
+            document.getElementById('total').innerHTML = time.total
+
+            const checklist = []
+            for (elt of time.step.check) {
+                const p = document.createElement("li");
+                const txt = document.createTextNode(elt);
+                p.appendChild(txt);
+                checklist.push(p);
+            }
+
+            const checklist_div = document.getElementById('checklist')
+            checklist_div.replaceChildren(...checklist);
+
+            const className = time.step.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+            
+            document.querySelector('body').setAttribute('class', className)
+
+            requestAnimationFrame(frame)
+        }
+
+        function pageTitle() {
+            const time = getTime()
+            const display = `${time.minute}:${formatInt(time.seconde, 2)} - ${time.step.title}`
+            document.title = display
+            setTimeout(pageTitle, 100)
+        }
+
+        function main() {
+            if (localStorage.getItem('time') === null || localStorage.getItem('offset_ms') === null) {
+                restart()
+            }
+            if (localStorage.getItem('paused') === null) {
+                localStorage.setItem('paused', 'false');
+            }
+            document.getElementById('pause').addEventListener('click', pause)
+
+            document.getElementById('refresh').addEventListener('click', restart)
+            document.getElementById('next').addEventListener('click', () => do_offset(1))
+            document.getElementById('prev').addEventListener('click', () => do_offset(-1))
+
+            document.getElementById('next_step').addEventListener('click', do_offset_step)
+
+            requestAnimationFrame(frame)
+            setTimeout(pageTitle)
+        }
+
+        const logs = [];
+
+        function addLog(text) {
+            const now = Date.now()
+            const p = document.createElement("p");
+            const txt = document.createTextNode(`[${now}] ${text}`);
+            p.appendChild(txt);
+            logs.push(p)
+    
+            const logs_div = document.getElementById('log')
+            logs_div.replaceChildren(...logs);
+        }
+
+        function clearLog() {
+            logs.length = 0
+        }
+
+        main()
+    </script>
+</body>
+
+</html>
