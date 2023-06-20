@@ -6,23 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MultiTimer</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&family=Roboto+Slab:wght@500&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&family=Roboto+Slab:wght@300;500&display=swap"
         rel="stylesheet">
     <style>
+        body {
+            font-family: 'Roboto Slab', serif;
+            font-weight: 300;
+        }
         h1 {
             font-family: 'Roboto Slab', serif;
+            font-weight: 500;
         }
+        ul {
+            list-style-type: "\2611 \ ";
+        }
+
         #timer,
         #total {
             font-family: 'MuseoModerno', cursive;
         }
+
         #log {
             font-family: monospace;
             font-size: small;
         }
+
         #log p {
-                margin: 0;
-        ;}
+            margin: 0;
+        }
     </style>
 </head>
 
@@ -38,22 +49,25 @@
     </div>
     Total time: <div id='total'> </div>
 
-    <p>Checklist of this step:</p>
-    <ul id="checklist"> </ul>
+    <div id="checklist">
+        <!-- <p>Checklist of this step:</p>
+        <ul id="checklist"> </ul> -->
+    </div>
 
-    log:
+
+    Log:
     <div id="log"></div>
 
     <script>
         const steps = [
-            {title: 'Accueil', time: 5, check: ["Cotes écrit et eval. cont. encodées sur ECAM+", "En possession de l'enveloppe de cotation", "Check compo jury", "Confidentiel: faire signer NDA (tous sauf lecteurs)", "Inviter à commencer l'épreuve" ]},
-            {title: 'TFE', time: 20, check: []},
-            {title: 'Questions', time: 25, check: []},
-            {title: 'Points TFE', time: 5, check: ["Inviter le public à quitter", "Distribuer feuille cotation", "Encoder cotes (présentation et défense) dans ECAM+"]},
-            {title: 'Préparation question de maturité', time: 5, check: ["Inviter président à préparer question de maturité", "Inviter étudiant à entrer quand c'est fait"]},
-            {title: 'Maturité', time: 25, check: []},
-            {title: 'Points maturité', time: 5, check: ["Inviter le public à quitter", "Distribuer feuille cotation", "Encoder cotes (maturité) dans ECAM+" ]},
-            {title: 'Points totaux', time: 5, check: ["Annoncer et finaliser la cote finale (au demi point près) et valider sur ECAM+", "Confidentiel: Donner NDA au promoteur et faire signer accusé de réception"]},
+            { title: 'Accueil', time: 5, check: ["Cotes écrit et evaluation continue sont encodées sur ECAM+", "Être en possession de l'enveloppe de cotation", "Check composition du jury", "Si confidentiel: faire signer NDA", "Inviter à commencer l'épreuve"] },
+            { title: 'TFE', time: 20, check: [] },
+            { title: 'Questions', time: 25, check: [] },
+            { title: 'Points TFE', time: 5, check: ["Inviter le public à quitter", "Distribuer feuille cotation", "Encoder cotes (présentation et défense) dans ECAM+"] },
+            { title: 'Préparation question de maturité', time: 5, check: ["Inviter président à préparer question de maturité", "Inviter étudiant à entrer quand c'est fait"] },
+            { title: 'Maturité', time: 25, check: [] },
+            { title: 'Points maturité', time: 5, check: ["Inviter le public à quitter", "Distribuer feuille cotation", "Encoder cotes (maturité) dans ECAM+"] },
+            { title: 'Points totaux', time: 5, check: ["Annoncer et finaliser la cote finale (au demi point près) et valider sur ECAM+", "Si confidentiel: Donner NDA au promoteur et faire signer accusé de réception"] },
         ]
 
         function get_current_step(minute) {
@@ -61,10 +75,10 @@
             for (let step of steps) {
                 accumulatedTime += step.time
                 if (minute < accumulatedTime) {
-                    return {time: accumulatedTime, step: step}
+                    return { time: accumulatedTime, step }
                 }
             }
-            return {time: accumulatedTime, step: {title: 'Terminé', time: 0, check: []},}
+            return { time: accumulatedTime, step: { title: 'Terminé', time: 0, check: [] }, }
         }
 
         function restart() {
@@ -73,9 +87,10 @@
             localStorage.setItem('offset_ms', String(0))
             localStorage.setItem('paused', 'false') // Reset the paused state
             localStorage.removeItem('pauseStart') // Reset the pause start time
+            update_play_but()
 
-            clearLog();
-            addLog("Restarted");
+            clearLog()
+            addLog("Restarted")
         }
 
         function do_offset(delta_min) {
@@ -83,15 +98,17 @@
             let pos_offset = Math.max(offset_ms + delta_min * 60000, 0)
             localStorage.setItem('offset_ms', pos_offset)
             console.log(offset_ms + delta_min * 60000)
+
+            addLog(`Added ${delta_min}s`)
         }
 
         function get_time_elap() {
             const start = parseInt(localStorage.getItem('time'), 10)
             const offset_ms = parseInt(localStorage.getItem('offset_ms'), 10)
 
-            let now = localStorage.getItem('paused') === 'true' ? parseInt(localStorage.getItem('pauseStart'), 10) : Date.now();
+            let now = localStorage.getItem('paused') === 'true' ? parseInt(localStorage.getItem('pauseStart'), 10) : Date.now()
 
-            let msec = now - start + offset_ms;
+            let msec = now - start + offset_ms
 
             let seconde = Math.floor(msec / 1000)
             msec = msec % 1000
@@ -102,39 +119,48 @@
         }
 
         function do_offset_step() {
-            const [minute, seconde, msec] = get_time_elap();
-            const accumulatedTime = get_current_step(minute);
+            const [minute, seconde, msec] = get_time_elap()
+            const accumulatedTime = get_current_step(minute)
 
-            do_offset(accumulatedTime.time - minute - 1 + (59 - seconde) / 60 + (999+1 - msec) / 60000);
-            
+            do_offset(accumulatedTime.time - minute - 1 + (59 - seconde) / 60 + (999 + 1 - msec) / 60000)
+
             addLog("Next step")
-            
+
+        }
+
+        function update_play_but() {
+            let i = document.querySelector("#pause > i:first-of-type");
+            if (localStorage.getItem('paused') === 'true') {
+                i.textContent = "play_arrow"
+            } else {
+                i.textContent = "pause"
+            }
         }
 
         function pause() {
             // If the timer is already paused, unpause it
             if (localStorage.getItem('paused') === 'true') {
-                const pauseEnd = Date.now();
-                const pauseStart = parseInt(localStorage.getItem('pauseStart'), 10);
-                const pauseDuration = pauseEnd - pauseStart;
-                const start = parseInt(localStorage.getItem('time'), 10);
-                localStorage.setItem('time', String(start + pauseDuration));
-                localStorage.setItem('paused', 'false');
+                const pauseEnd = Date.now()
+                const pauseStart = parseInt(localStorage.getItem('pauseStart'), 10)
+                const pauseDuration = pauseEnd - pauseStart
+                const start = parseInt(localStorage.getItem('time'), 10)
+                localStorage.setItem('time', String(start + pauseDuration))
+                localStorage.setItem('paused', 'false')
                 addLog("Play (unpause)")
             }
             // Otherwise, pause the timer
             else {
-                localStorage.setItem('pauseStart', String(Date.now()));
-                localStorage.setItem('paused', 'true');
+                localStorage.setItem('pauseStart', String(Date.now()))
+                localStorage.setItem('paused', 'true')
                 addLog("Pause")
             }
+            update_play_but()
         }
 
         function getTime() {
+            const [minute, seconde, msec] = get_time_elap()
 
-            const [minute, seconde, msec] = get_time_elap();
-
-            const accumulatedTime = get_current_step(minute);
+            const accumulatedTime = get_current_step(minute)
 
             if (accumulatedTime.step.title !== "Terminé") {
                 return {
@@ -170,19 +196,24 @@
 
             document.getElementById('total').innerHTML = time.total
 
-            const checklist = []
-            for (elt of time.step.check) {
-                const p = document.createElement("li");
-                const txt = document.createTextNode(elt);
-                p.appendChild(txt);
-                checklist.push(p);
+            const checklist = time.step.check.map( (elt,index,array) => {
+                const p = document.createElement("li")
+                p.appendChild(document.createTextNode(elt))
+                return p
+            })
+            
+            if (checklist.length > 0) {
+                const p = document.createElement("p")
+                p.appendChild(document.createTextNode("Checklist for this step:"))
+                const ul = document.createElement("ul")
+                ul.replaceChildren(...checklist)
+                document.getElementById('checklist').replaceChildren(p,ul)
+            } else {
+                const p = document.createElement("p")
+                document.getElementById('checklist').replaceChildren(p)
             }
 
-            const checklist_div = document.getElementById('checklist')
-            checklist_div.replaceChildren(...checklist);
-
             const className = time.step.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
-            
             document.querySelector('body').setAttribute('class', className)
 
             requestAnimationFrame(frame)
@@ -200,31 +231,31 @@
                 restart()
             }
             if (localStorage.getItem('paused') === null) {
-                localStorage.setItem('paused', 'false');
+                localStorage.setItem('paused', 'false')
             }
-            document.getElementById('pause').addEventListener('click', pause)
+            update_play_but()
 
+            document.getElementById('pause').addEventListener('click', pause)
             document.getElementById('refresh').addEventListener('click', restart)
             document.getElementById('next').addEventListener('click', () => do_offset(1))
             document.getElementById('prev').addEventListener('click', () => do_offset(-1))
-
             document.getElementById('next_step').addEventListener('click', do_offset_step)
 
             requestAnimationFrame(frame)
             setTimeout(pageTitle)
         }
 
-        const logs = [];
+        const logs = []
 
         function addLog(text) {
             const now = Date.now()
-            const p = document.createElement("p");
-            const txt = document.createTextNode(`[${now}] ${text}`);
-            p.appendChild(txt);
+            const p = document.createElement("p")
+            const txt = document.createTextNode(`[${now}] ${text}`)
+            p.appendChild(txt)
             logs.push(p)
-    
+
             const logs_div = document.getElementById('log')
-            logs_div.replaceChildren(...logs);
+            logs_div.replaceChildren(...logs)
         }
 
         function clearLog() {
