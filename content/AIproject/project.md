@@ -1,20 +1,20 @@
 +++
 title = "Artificial Intelligence Project"
-date = 2022-11-10
+date = 2023-09-15
 description = "v1.0.0"
 weight = 1
 +++
 
 # Introduction
 
-<img src="/AIproject/ocr.jpg" alt="Char recognition app" width=100% />
+<img src="/AIproject/ocr.jpg" alt="Smart image galery" width=100% />
 
-## Character recognition 
+## Smart image galery
 
-We want to create an app to automatically detect and recognize characters in
-documents.
-Specifically, we want to be able to read students' copies and grade them
-automatically.
+We want to create a smart image galery. Your image galery should have the
+following features: Automatic detection of persons and possibly animals.
+Identifying a person and being capable of detecting all occurences of a 
+specific person accross images, being able to filter by person.
 
 This project is multidisciplinary, you will leverage your knowledge of machine
 learning, learn new techniques, and also use your knowledge of programming,
@@ -22,29 +22,12 @@ web development, and ergonomics.
 
 ## Features
 
-### Minimal
-
-- A web app, where I can upload image files or pdf files, process them, and get
-  the results in a structured format and save them.
-- I want to browse the history of processed files.
-- I want to read digits anywhere on a page, or in a configurable zone of the
-  page.
-
-### Intermediate
-
-- I want to be able to read printed characters anywhere on the page, or in a
-  configurable zone of the page.
-- I can take pictures of pages directly from my smartphone.
-
-### Advanced
-
-- I want to be able to read single letters or digits handwritten characters,
-  anywhere on the page, or in a configurable zone of the page.
-
-### Awesome
-
-- I want to be able to read complete sentences of handwriten characters,
-  anywhere in the page, or in a configurable zone of the page.
+- A web app, where I can upload image files and they get processed.
+- The app processes the images and detects humans.
+- The app detects animals in images.
+- The app clusters and identifies humans and animals 
+- It is possible to filter images by humans in them.
+- It is possible to filter images by types of animals in them.
 
 ## Tools
 
@@ -53,7 +36,7 @@ parts.
 You can use any programming language, any existing dataset you can find online,
 any pre-trained machine learning model (do not forget to cite your sources).
 
-Training (or re-training) your own model for any part of the project will be appreciated.
+There should be a machine learning model trained by you in one part of the project.
 
 # Evaluation
 
@@ -76,10 +59,5 @@ the exam session.
 For the presentation: justify your choices, present your results, and make a
 demonstration of your app (with eventual limits?).
 
-The presentation will be followed by a 15-minute interview with some general
-questions about your project, such as organizational details, technical
-details, and general knowledge of the machine learning techniques that you applied.
-
-Although the project presentation is done in groups, the interview, will be
-**individual**.
+The presentation will be followed by 15 minutes of questions.
 
