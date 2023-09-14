@@ -130,3 +130,8 @@ a = 2,b = 2,d = 1, bd = 2 = a, case 1, $O(n \log n)$
 - $T(n) = 4T(n/2) + n^2$
 - $T(n) = 16T(n/4) + n$
 - $T(n) = 7T(n/3) + n^2$
+
+## Divide and conquer
+
+- Implement peak search
+- Implement merge sort
