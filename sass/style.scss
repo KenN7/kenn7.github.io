@@ -109,6 +109,11 @@ h1 {
     }
 }
 
+.no-count::before {
+    counter-increment: none;
+    content: none;
+}
+
 h2:before {
     counter-increment: subsection;
     content: counter(section) "." counter(subsection) " ";

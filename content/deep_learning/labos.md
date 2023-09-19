@@ -1,31 +1,31 @@
 +++
-title = "DL for vision: Laboratoires"
+title = "DL for vision: laboratoires"
 date = 2023-09-15
 description = "v1.0.0"
 weight = 1
 +++
 
-# Introduction
+<h1 class="no-count">Introduction</h1>
 
 Des notebook jupyter sont proposés pour chaque laboratoire, au cours de chaque
 labo, votre avancement sera noté.
 
 Commencez par cloner le dépot git suivant: [https://github.com/KenN7/deep-learning](https://github.com/KenN7/deep-learning)
 
-# Labo 1
+# Labo MLP
 
 Dans le dossier `deep-learing/labs`, pour ce labo, vous devez faire les notebook
 numerotés de 1 à 4.
  
-# Labo 2
+# Labo CNN et autoencodeur
 
 Dans le dossier `deep-learing/labs`, pour ce labo, vous devez faire les notebook
-numerotés de 4 à 9.
+numerotés de 5 à 9.
 
-# Labo 3
+# Labo application
 
 Vous devez réaliser vous même un modèle de détection d'anomalies à partir d'une
-partie du dataset [MVTec AD](https://www.mvtec.com/company/research/datasets/mvtec-ad).
+partie du dataset [MVTec AD](https://www.mvtec.com/company/research/datasets/mvtec-ad), de votre choix.
 
 Implementer et tester:
 
