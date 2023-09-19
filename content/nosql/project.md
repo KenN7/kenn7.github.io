@@ -1,6 +1,6 @@
 +++
 title = "NoSQL Databases project"
-date = 2022-10-10
+date = 2023-09-20
 description = "v1.0.0"
 weight = 2
 +++
@@ -31,7 +31,7 @@ for the last course about one NoSQL database.
 
 During this presentation, you will introduce the basic aspects of the
 database you chose including (but not exclusively): Implementation, type of DB
-(key-value, document, column, graph), basic features of this type of DB, 
+(key-value, document, column, graph, etc.), basic features of this type of DB, 
 consistency model, implication of such model, features of the specific
 implementation of your DB, specificities of your DB, 
 use cases, presentation on how to interact with the database (API?, language?)
@@ -50,4 +50,4 @@ use your app.
 You will be graded based on the quality of your presentation, report and
 showcase app.
 
-The report, presentation and sources, should be uploaded to claco before **12/12/2022 20:00**.
+The report, presentation and sources, should be uploaded to claco before **08/11/2023 20:00**.
