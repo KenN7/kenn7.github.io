@@ -1,6 +1,6 @@
 +++
 title = "DL for vision: préparation"
-date = 2023-02-28
+date = 2023-09-15
 description = "v1.0.0"
 weight = 1
 +++
