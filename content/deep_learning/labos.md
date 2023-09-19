@@ -25,7 +25,7 @@ numerotés de 5 à 9.
 # Labo application
 
 Vous devez réaliser vous même un modèle de détection d'anomalies à partir d'une
-partie du dataset [MVTec AD](https://www.mvtec.com/company/research/datasets/mvtec-ad), de votre choix.
+partie du dataset [MVTec AD](https://www.mvtec.com/company/research/datasets/mvtec-ad/downloads), de votre choix.
 
 Implementer et tester:
 
