@@ -39,20 +39,23 @@ ctx.closePath()
 The best we can do here is to draw a line after the eighth brick, which will only require cutting through the bricks in the third and fifth row.
 Given an input consisting of brick lengths for each row such as the one above, returns the fewest number of bricks that must be cut to create a vertical line.
 
-## **Find most similar websites**
+## AOC Day 6, 2021
+Solve the lanternfish problem of [day 6 of advent of code 2021](https://adventofcode.com/2021/day/6).
 
-You are given a list of (`website`, `user`) pairs that represent users visiting websites. Come up with a program that identifies the top $k$ pairs of websites with the greatest similarity. For example, suppose $k=1$, and the list of tuples is:
+<!-- ## **Find most similar websites** -->
 
-```
-[('google.com', 1), ('google.com', 3), ('google.com', 5),
-('pets.com', 1), ('pets.com', 2), ('yahoo.com', 6),
-    ('yahoo.com', 2), ('yahoo.com', 3),('yahoo.com', 4),
-    ('yahoo.com', 5), ('wikipedia.org', 4), ('wikipedia.org', 5),
-    ('wikipedia.org', 6),('wikipedia.org', 7), ('bing.com', 1),
-    ('bing.com', 3),('bing.com', 5),('bing.com', 6)]
-```
+<!-- You are given a list of (`website`, `user`) pairs that represent users visiting websites. Come up with a program that identifies the top $k$ pairs of websites with the greatest similarity. For example, suppose $k=1$, and the list of tuples is: -->
 
-To compute the similarity between two websites you should compute the number of users they have in common divided by the number of users who have visited either site in total (this is known as the Jaccard index). For example, in this case, we would conclude that `google.com` and `bing.com` are the most similar with a score of $3/4$ or $0.75$
+<!-- ``` -->
+<!-- [('google.com', 1), ('google.com', 3), ('google.com', 5), -->
+<!-- ('pets.com', 1), ('pets.com', 2), ('yahoo.com', 6), -->
+<!--     ('yahoo.com', 2), ('yahoo.com', 3),('yahoo.com', 4), -->
+<!--     ('yahoo.com', 5), ('wikipedia.org', 4), ('wikipedia.org', 5), -->
+<!--     ('wikipedia.org', 6),('wikipedia.org', 7), ('bing.com', 1), -->
+<!--     ('bing.com', 3),('bing.com', 5),('bing.com', 6)] -->
+<!-- ``` -->
+
+<!-- To compute the similarity between two websites you should compute the number of users they have in common divided by the number of users who have visited either site in total (this is known as the Jaccard index). For example, in this case, we would conclude that `google.com` and `bing.com` are the most similar with a score of $3/4$ or $0.75$ -->
 
 ## **Implement a sparse array**
 You have a large array, most of whose elements are zero. Create a more space-efficient data structure, `SparseArray`, that implements the following interface:
