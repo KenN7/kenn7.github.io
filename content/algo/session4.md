@@ -5,7 +5,7 @@ description = "v1.0.0"
 weight = 4
 +++
 
-# BFS
+# BFS and DFS
 
 Here is a representation of a graph:
 
