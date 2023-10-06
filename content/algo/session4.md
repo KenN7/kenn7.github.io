@@ -5,53 +5,23 @@ description = "v1.0.0"
 weight = 4
 +++
 
-# Backtracking
+# BFS
 
-## **Compute flight itinerary**
-Given an unordered list of flights taken by someone, each represented as `(origin, destination)` pairs, and a starting airport, compute a possible itinerary. If no such itinerary exists, return `null`. All flights must be used in the itinerary. For example, given the list of flights `[('SFO', 'HKO'), ('YYZ', 'SFO'), ('YUL', 'YYZ'), ('HKO', 'ORD')]` and starting at airport `YUL`, you may return the list `[('YUL', 'YYZ'),('YYZ', 'SFO'),('SFO', 'HKO'),('HKO', 'ORD')]`. Given `[('SFO', 'COM'),('COM', 'YYZ')]` and starting at airport `COM` you should return `null`.
+Here is a representation of a graph:
 
-## **The N-Queens problems**
-The N-Queens problem asks you to find an arrangment so that $N$ queens can be
-placed on a $N \cdot N$ chess board without being able to directly attack each
-other.
-Write a program that displays one possible arrangment for the N-Queens problem.
-
-You can use the following function to display your solution:
 ```python
-def print_board(queens):
-    board = [["." for i in range(len(queens))] for i in range(len(queens))]
-    for i in range(len(queens)):
-        board[queens[i]][i] = "Q"
-
-    for l in board:
-        for c in l:
-            print(c, end=" ")
-        print()
+edges = {
+  1: [2,3,4],
+  2: [5,6],
+  4: [7,8],
+  5: [9,10],
+  7: [11,12],
+}
 ```
 
-## **Count Android unlock combinations**
-One way to unlock an Android phone is by swiping in a specific pattern across a $1$ - $9$ keypad, which looks like this:
-{% mermaid() %}
-  graph LR
-      1 --- 2
-      2 --- 3
-      4 --- 5
-      5 --- 6
-      7 --- 8
-      8 --- 9
-{% end %}
-<!-- **TODO: improve graph!!** -->
+Draw this graph on paper.
 
-For a pattern to be valid, it must satisfy the following criteria:
-- All of its keys must be distinct.
-- It must not connect two keys by jumping over a third key, unless that key has already been used.
-
-For example, $4$ - $2$ - $1$ - $7$ is a valid pattern, whereas $2$ - $1$ - $7$ is not.
-Find the total number of valid unlock patterns of lenght $n$ where $1$ $\leq$ $n$ $\leq$ $9$.
-
-## **Solve Sudoku**
-Sudoku is a puzzle where you're given a 9 by 9 grid partially filled with digits. The objective is to fill the grid subject to the constraint that every row, colum, and box (3 by 3 subgrid) must contain all of the digits from 1 to 9.
-Implement an efficient sudoku solver.
+Implement BFS and DFS on this graph and output the order of traversal of the nodes.
 
 # Recursion
 
@@ -98,6 +68,51 @@ The game of Nim is played as follows. Starting with three heaps, each containing
 
 In other words, to start, the first player takes thress items from pile $B$. The second player responds by removing two stones from pile $C$. The game continues in this way until player one takes the last stone and loses.
 Given a list of non-zero starting values `[a, b, c]`, and assuming optimal play, determine whether the first player has a forced win.
+
+# Backtracking
+
+## **The N-Queens problems**
+The N-Queens problem asks you to find an arrangment so that $N$ queens can be
+placed on a $N \cdot N$ chess board without being able to directly attack each
+other.
+Write a program that displays one possible arrangment for the N-Queens problem.
+
+You can use the following function to display your solution:
+```python
+def print_board(queens):
+    board = [["." for i in range(len(queens))] for i in range(len(queens))]
+    for i in range(len(queens)):
+        board[queens[i]][i] = "Q"
+
+    for l in board:
+        for c in l:
+            print(c, end=" ")
+        print()
+```
+
+## **Count Android unlock combinations**
+One way to unlock an Android phone is by swiping in a specific pattern across a $1$ - $9$ keypad, which looks like this:
+{% mermaid() %}
+  graph LR
+      1 --- 2
+      2 --- 3
+      4 --- 5
+      5 --- 6
+      7 --- 8
+      8 --- 9
+{% end %}
+<!-- **TODO: improve graph!!** -->
+
+For a pattern to be valid, it must satisfy the following criteria:
+- All of its keys must be distinct.
+- It must not connect two keys by jumping over a third key, unless that key has already been used.
+
+For example, $4$ - $2$ - $1$ - $7$ is a valid pattern, whereas $2$ - $1$ - $7$ is not.
+Find the total number of valid unlock patterns of lenght $n$ where $1$ $\leq$ $n$ $\leq$ $9$.
+
+## **Solve Sudoku**
+Sudoku is a puzzle where you're given a 9 by 9 grid partially filled with digits. The objective is to fill the grid subject to the constraint that every row, colum, and box (3 by 3 subgrid) must contain all of the digits from 1 to 9.
+Implement an efficient sudoku solver.
 
 
 <!-- 
