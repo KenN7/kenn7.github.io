@@ -37,9 +37,8 @@ Implementer et tester:
 Durant chaque laboratoire votre avancement sera côté, le labo 1 vaut 5 points, labo 2 vaut 5 points et le labo 3 vaut 6 points. 
 
 # Ressources
-- [Deep Learning](https://www.udacity.com/course/deep-learning-nanodegree--nd101), udacity nanodegree
+
+- [Understanding Deep Learning](https://udlbook.github.io/udlbook/), Simon J.D. Prince.
  - CS231n: Deep Learning for Computer Vision, Stanford university.
 - [Dive into Deep Learning](https://d2l.ai/)
-- [Introduction to Deep
-  Learning](https://sebastianraschka.com/blog/2021/dl-course.html), Sebastian Raschka 
-- INFO8010 - Deep Learning, Gilles Louppe, ULiège.
+- [Introduction to Deep Learning](https://sebastianraschka.com/blog/2021/dl-course.html), Sebastian Raschka 

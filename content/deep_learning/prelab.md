@@ -74,9 +74,8 @@ Ouvrez le fichier `preparation.ipynb` dans le dossier `homework` avec jupyter et
 
 
 # Ressources
-- [Deep Learning](https://www.udacity.com/course/deep-learning-nanodegree--nd101), udacity nanodegree
- - CS231n: Deep Learning for Computer Vision, Stanford university.
+
+- [Understanding Deep Learning](https://udlbook.github.io/udlbook/), Simon J.D. Prince.
+- CS231n: Deep Learning for Computer Vision, Stanford university.
 - [Dive into Deep Learning](https://d2l.ai/)
-- [Introduction to Deep
-  Learning](https://sebastianraschka.com/blog/2021/dl-course.html), Sebastian Raschka 
-- INFO8010 - Deep Learning, Gilles Louppe, ULiège.
+- [Introduction to Deep Learning](https://sebastianraschka.com/blog/2021/dl-course.html), Sebastian Raschka 
