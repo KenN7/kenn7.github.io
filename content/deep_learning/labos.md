@@ -20,7 +20,7 @@ numerotés de 1 à 4.
 # Labo CNN et autoencodeur
 
 Dans le dossier `deep-learing/labs`, pour ce labo, vous devez faire les notebook
-numerotés de 5 à 9.
+numerotés de 5 à 8.
 
 # Labo application
 
