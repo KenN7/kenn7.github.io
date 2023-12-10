@@ -22,6 +22,12 @@ numerotés de 1 à 4.
 Dans le dossier `deep-learing/labs`, pour ce labo, vous devez faire les notebook
 numerotés de 5 à 8.
 
+Pour finir, à l'aide des différents programme que vous veniez d'étudier, vous devez réaliser 
+vous même un modèle de classification d'objets défectueux.
+
+Implementer et tester, en utilisant le dataset [Mini Waffles](https://drive.google.com/u/0/uc?id=15fwi2NEX0P8EdDF_LBGg7s5opRCKmhY2&export=download):
+- La classification de gauffres abimées en apprentissage supervisé avec une architecture CNN.
+
 # Labo application
 
 Vous devez réaliser vous même un modèle de détection d'anomalies à partir d'une
@@ -29,7 +35,6 @@ partie du dataset [MVTec AD](https://www.mvtec.com/company/research/datasets/mvt
 
 Implementer et tester:
 
-- la détection d'anomalies en apprentissage supervisé avec une detection multi-classe et une architecture CNN,
 - la détection d'anomalies en apprentissage non supervisé grâce à l'architecture CNN et autoencodeur.
 
 # Evaluation
