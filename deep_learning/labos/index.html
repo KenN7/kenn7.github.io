@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSL course material</title>
+
+  <link rel="preload" as="font" href="/fonts/cmuserif_roman_macroman/cmunrm-webfont.woff" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/cmuserif_bold_macroman/cmunbx-webfont.woff" type="font/woff" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="/main.js"></script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+  
+
+
+</head>
+
+<body>
+  <div class="container">
+    
+<h1 class="title">
+  DL for vision: laboratoires
+</h1>
+<div class="sub_grid">
+  <div><button id="print_button" class="no-print button_effect">🖨️(as pdf)</button></div>
+  <div>v1.0.0</div>
+  <div class="subtitle">2023-09-15</div>
+  <div id="all_sol_but_div"></div>
+</div>
+
+<h1 class="no-count">Introduction</h1>
+<p>Des notebook jupyter sont proposés pour chaque laboratoire, au cours de chaque
+labo, votre avancement sera noté.</p>
+<p>Commencez par cloner le dépot git suivant: <a href="https://github.com/KenN7/deep-learning">https://github.com/KenN7/deep-learning</a></p>
+<h1 id="labo-mlp">Labo MLP</h1>
+<p>Dans le dossier <code>deep-learing/labs</code>, pour ce labo, vous devez faire les notebook
+numerotés de 1 à 4.</p>
+<h1 id="labo-cnn-et-autoencodeur">Labo CNN et autoencodeur</h1>
+<p>Dans le dossier <code>deep-learing/labs</code>, pour ce labo, vous devez faire les notebook
+numerotés de 5 à 8.</p>
+<p>Pour finir, à l'aide des différents programme que vous veniez d'étudier, vous devez réaliser 
+vous même un modèle de classification d'objets défectueux.</p>
+<p>Implementer et tester, en utilisant le dataset <a href="https://drive.google.com/u/0/uc?id=15fwi2NEX0P8EdDF_LBGg7s5opRCKmhY2&amp;export=download">Mini Waffles</a>:</p>
+<ul>
+<li>La classification de gauffres abimées en apprentissage supervisé avec une architecture CNN.</li>
+</ul>
+<h1 id="labo-application">Labo application</h1>
+<p>Vous devez réaliser vous même un modèle de détection d'anomalies à partir d'une
+partie du dataset <a href="https://www.mvtec.com/company/research/datasets/mvtec-ad/downloads">MVTec AD</a>, de votre choix.</p>
+<p>Implementer et tester:</p>
+<ul>
+<li>la détection d'anomalies en apprentissage non supervisé grâce à l'architecture CNN et autoencodeur.</li>
+</ul>
+<h1 id="evaluation">Evaluation</h1>
+<p>Durant chaque laboratoire votre avancement sera côté, le labo 1 vaut 5 points, labo 2 vaut 5 points et le labo 3 vaut 6 points. </p>
+<h1 id="ressources">Ressources</h1>
+<ul>
+<li><a href="https://udlbook.github.io/udlbook/">Understanding Deep Learning</a>, Simon J.D. Prince.</li>
+<li>CS231n: Deep Learning for Computer Vision, Stanford university.</li>
+<li><a href="https://d2l.ai/">Dive into Deep Learning</a></li>
+<li><a href="https://sebastianraschka.com/blog/2021/dl-course.html">Introduction to Deep Learning</a>, Sebastian Raschka </li>
+</ul>
+
+
+
+  </div> 
+  <div class="footer">
+    
+<hr>
+<p class="footnote">Found an error? Let us know: 
+    <a href="https://github.com/kenn7/kenn7.github.io/">
+        https://github.com/kenn7/kenn7.github.io/
+    </a>
+</p>
+
+
+  </div>
+</body>
+
+</html>

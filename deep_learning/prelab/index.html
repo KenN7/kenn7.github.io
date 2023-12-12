@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSL course material</title>
+
+  <link rel="preload" as="font" href="/fonts/cmuserif_roman_macroman/cmunrm-webfont.woff" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/cmuserif_bold_macroman/cmunbx-webfont.woff" type="font/woff" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="/main.js"></script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+  
+
+
+</head>
+
+<body>
+  <div class="container">
+    
+<h1 class="title">
+  DL for vision: préparation
+</h1>
+<div class="sub_grid">
+  <div><button id="print_button" class="no-print button_effect">🖨️(as pdf)</button></div>
+  <div>v1.0.0</div>
+  <div class="subtitle">2023-09-15</div>
+  <div id="all_sol_but_div"></div>
+</div>
+
+<h1 id="introduction">Introduction</h1>
+<p>Il nous ai demandé de réaliser quelques tâches avant le premier cours,
+ces tâches comptent pour 4 points sur votre cote finale.</p>
+<!-- install python, video konbini et exo math -->
+<!-- Et petite phrase sur ce qu’est le deep learning -->
+<!-- Devoir à faire le WK entre jour 2 et 3?
+Devoir/rapport à rendre après ?
+Interro/discussion quotidienne avant fin du labo -->
+<h1 id="qu-est-ce-que-le-machine-learning-et-le-deep-learning">Qu'est ce que le machine learning et le deep learning ?</h1>
+<p>Commencez par visualiser <a href="https://twitter.com/ylecun/status/1310719484831969280">cette vidéo.</a></p>
+<h3 id="question-que-represente-le-machine-learning-pour-vous-et-le-deep-learning-donner-quelques-exemples-d-applications-concretes">Question: Que représente le machine learning pour vous ? et le deep learning ? Donner quelques exemples d'applications concrêtes.</h3>
+<h1 id="installation-software">Installation software</h1>
+<p>Vous devez avoir une installation fonctionelle de python, pytorch et jupyter
+<strong>avant</strong> d'arriver en cours.</p>
+<p>Durant le cours, nous allons utiliser à la fois vos PCs ainsi que des ressources
+GPU en ligne (cloud computing) pour entrainer des modèles de deep learning.</p>
+<h2 id="python-et-pytorch">Python et pytorch</h2>
+<p>Vous devez avoir une installation de python récente et fonctionelle, ainsi
+qu'une installation de pytorch.</p>
+<p>Vous pouvez consulter le guide sur le site de pytorch pour cela <a href="https://pytorch.org/get-started/locally/">(la librairie de deep learning utilisée pour ce
+cours)</a>.</p>
+<p>Vous installerez aussi Jupyter avec les instructions suivantes: <a href="https://jupyter.org/install">https://jupyter.org/install</a></p>
+<p>Pour editer votre code, vous pouvez utiliser directement jupyter ou vscode.</p>
+<p>Une fois que tout est installé vous devriez pouvoir ouvrir jupyter et executer
+le programme suivant:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">import </span><span>torch
+</span><span>
+</span><span>x = torch.</span><span style="color:#bf616a;">rand</span><span>(</span><span style="color:#d08770;">5</span><span>, </span><span style="color:#d08770;">3</span><span>)
+</span><span style="color:#96b5b4;">print</span><span>(x)
+</span><span>
+</span><span style="color:#96b5b4;">print</span><span>(torch.cuda.</span><span style="color:#bf616a;">is_available</span><span>())
+</span></code></pre>
+<p>Il devrait afficher une matrice de valeurs aléatoires et ensuite &quot;True&quot; ou 
+&quot;False&quot; suivant si votre ordinateur possède un GPU compatible cuda. 
+Si ce code renvoie une exception, votre installation n'est pas
+fonctionelle.</p>
+<h2 id="gpu-en-ligne">GPU en ligne</h2>
+<p>Vous devez aussi avoir un compte <a href="https://colab.research.google.com/">google colab</a>, afin d'avoir accès aux
+ressources GPU en ligne.</p>
+<h1 id="exercice-sur-numpy-et-pytorch">Exercice sur numpy et pytorch</h1>
+<p>Commencez par cloner le dépot git suivant: <a href="https://github.com/KenN7/deep-learning">https://github.com/KenN7/deep-learning</a></p>
+<p><a href="https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop">Cliquez ici pour un rappel concernant l'utilisation de git</a></p>
+<p>Ouvrez le fichier <code>preparation.ipynb</code> dans le dossier <code>homework</code> avec jupyter et completez l'exercice.</p>
+<h1 id="ressources">Ressources</h1>
+<ul>
+<li><a href="https://udlbook.github.io/udlbook/">Understanding Deep Learning</a>, Simon J.D. Prince.</li>
+<li>CS231n: Deep Learning for Computer Vision, Stanford university.</li>
+<li><a href="https://d2l.ai/">Dive into Deep Learning</a></li>
+<li><a href="https://sebastianraschka.com/blog/2021/dl-course.html">Introduction to Deep Learning</a>, Sebastian Raschka </li>
+</ul>
+
+
+
+  </div> 
+  <div class="footer">
+    
+<hr>
+<p class="footnote">Found an error? Let us know: 
+    <a href="https://github.com/kenn7/kenn7.github.io/">
+        https://github.com/kenn7/kenn7.github.io/
+    </a>
+</p>
+
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSL course material</title>
+
+  <link rel="preload" as="font" href="/fonts/cmuserif_roman_macroman/cmunrm-webfont.woff" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/cmuserif_bold_macroman/cmunbx-webfont.woff" type="font/woff" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="/main.js"></script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+  
+
+
+</head>
+
+<body>
+  <div class="container">
+    
+<h1 class="title">
+  Algorithms, Session 3, Hash Tables
+</h1>
+<div class="sub_grid">
+  <div><button id="print_button" class="no-print button_effect">🖨️(as pdf)</button></div>
+  <div>v1.0.0</div>
+  <div class="subtitle">2021-10-16</div>
+  <div id="all_sol_but_div"></div>
+</div>
+
+<h1 id="hash-tables">Hash Tables</h1>
+<h2 id="cut-brick-wall"><strong>Cut brick wall</strong></h2>
+<p>A wall consists of several rows of bricks of various integer lengths and uniform height. Your goal is to find a vertical line going from the top to the bottom of the wall that cuts through the fewest number of bricks. If the line goes through the edge between two bricks, this does not count as a cut.
+For example, suppose the input is as follows, where value in each row represent the lengths of bricks in that row:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>[[3,5,1,1],
+</span><span> [2,3,3,2],
+</span><span> [5,5],
+</span><span> [4,4,2],
+</span><span> [1,3,3,3],
+</span><span> [1,1,6,1,1]]
+</span></code></pre>
+<p>The wall would then look like this: </p>
+<p><canvas width=400 height=240 id="brick-wall"></canvas></p>
+<script>
+const ctx = document.getElementById('brick-wall').getContext('2d')
+const array = [[3,5,1,1],[2,3,3,2],[5,5],[4,4,2],[1,3,3,3],[1,1,6,1,1]]
+const rect_size = 40
+ctx.beginPath()
+for (const [y,subarray] of array.entries()) {
+    let part_sum = 0
+    for (const [x,val] of subarray.entries()) {
+        ctx.strokeRect(part_sum*rect_size,y*rect_size,rect_size*val,rect_size)
+        part_sum += val
+    }
+}
+ctx.closePath()
+</script>
+<p>The best we can do here is to draw a line after the eighth brick, which will only require cutting through the bricks in the third and fifth row.
+Given an input consisting of brick lengths for each row such as the one above, returns the fewest number of bricks that must be cut to create a vertical line.</p>
+<h2 id="aoc-day-6-2021">AOC Day 6, 2021</h2>
+<p>Solve the lanternfish problem of <a href="https://adventofcode.com/2021/day/6">day 6 of advent of code 2021</a>.</p>
+<!-- ## **Find most similar websites** -->
+<!-- You are given a list of (`website`, `user`) pairs that represent users visiting websites. Come up with a program that identifies the top $k$ pairs of websites with the greatest similarity. For example, suppose $k=1$, and the list of tuples is: -->
+<!-- ``` -->
+<!-- [('google.com', 1), ('google.com', 3), ('google.com', 5), -->
+<!-- ('pets.com', 1), ('pets.com', 2), ('yahoo.com', 6), -->
+<!--     ('yahoo.com', 2), ('yahoo.com', 3),('yahoo.com', 4), -->
+<!--     ('yahoo.com', 5), ('wikipedia.org', 4), ('wikipedia.org', 5), -->
+<!--     ('wikipedia.org', 6),('wikipedia.org', 7), ('bing.com', 1), -->
+<!--     ('bing.com', 3),('bing.com', 5),('bing.com', 6)] -->
+<!-- ``` -->
+<!-- To compute the similarity between two websites you should compute the number of users they have in common divided by the number of users who have visited either site in total (this is known as the Jaccard index). For example, in this case, we would conclude that `google.com` and `bing.com` are the most similar with a score of $3/4$ or $0.75$ -->
+<h2 id="implement-a-sparse-array"><strong>Implement a sparse array</strong></h2>
+<p>You have a large array, most of whose elements are zero. Create a more space-efficient data structure, <code>SparseArray</code>, that implements the following interface:</p>
+<ul>
+<li><code>init(arr,size)</code>: initialize with the original large array and size.</li>
+<li><code>set(i,val)</code>: update index at <code>i</code> to be <code>val</code>.</li>
+<li><code>get(i)</code>: get the value at index <code>i</code>.</li>
+</ul>
+<h2 id="implement-an-lru-cache"><strong>Implement an LRU cache</strong></h2>
+<p>Implement an LRU (Least Recently Used) cache. The cache should be able to be initialized with cache size $n$, and provide the following methods:</p>
+<ul>
+<li><code>set(key, value)</code>: set <code>key</code> to <code>value</code>. If there are already $n$ items in the cache and we are adding a new item, also remove the least recently used item.</li>
+<li><code>get(key)</code>: get the value at <code>key</code>. If no such key exists, return null.
+Each operation should run in $O(1)$ time.</li>
+</ul>
+
+
+
+  </div> 
+  <div class="footer">
+    
+<hr>
+<p class="footnote">Found an error? Let us know: 
+    <a href="https://github.com/kenn7/kenn7.github.io/">
+        https://github.com/kenn7/kenn7.github.io/
+    </a>
+</p>
+
+
+  </div>
+</body>
+
+</html>

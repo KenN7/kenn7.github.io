@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSL course material</title>
+
+  <link rel="preload" as="font" href="/fonts/cmuserif_roman_macroman/cmunrm-webfont.woff" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/cmuserif_bold_macroman/cmunbx-webfont.woff" type="font/woff" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="/main.js"></script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+  
+
+
+</head>
+
+<body>
+  <div class="container">
+    
+<h1 class="title">
+  Session 1, Algorithmes de tris
+</h1>
+<div class="sub_grid">
+  <div><button id="print_button" class="no-print button_effect">🖨️(as pdf)</button></div>
+  <div>v1.0.0</div>
+  <div class="subtitle">2023-04-04</div>
+  <div id="all_sol_but_div"></div>
+</div>
+
+<h1 id="rappels">Rappels</h1>
+<h2 id="afficher-une-liste">Afficher une liste</h2>
+<p>Créer une variable contenant une liste d'entiers, en utilisant <code>IntList ma_liste;</code>.</p>
+<ul>
+<li>
+<p>Remplir cette liste avec des nombres aléatoires</p>
+</li>
+<li>
+<p>Afficher cette liste dans la console de Processing</p>
+</li>
+<li>
+<p>Utilisez les <code>rect</code> de Processing pour afficher verticalement des rectangles de tailles
+différentes en fonction de la valeur du nombre.</p>
+</li>
+</ul>
+<p>Utilisez pour ça, la <a href="https://processing.org/reference/">documentation de référence de Processing.</a></p>
+<h2 id="creer-des-fonctions">Créer des fonctions</h2>
+<p>Créer une fonction permettant l'affichage de la liste avec les rectangles ayant
+pour signature <code>draw_array(IntList A, int size, int rect_size)</code>.</p>
+<p>Où, <code>A</code> est la liste à afficher, <code>size</code> donne le nombre d'éléments, <code>rect_size</code> donne la largeur des rectangles.</p>
+<h1 id="tris">Tris</h1>
+<h2 id="tri-bulle-et-quicksort">Tri bulle et quicksort</h2>
+<ul>
+<li>
+<p>Implémenter le tri bulle, tel que vu dans le cours, et afficher la liste non
+triée et la liste triée sur la console de Processing.</p>
+</li>
+<li>
+<p>Implémenter quicksort, tel que vu dans le cours, et afficher la liste non
+triée et la liste triée sur la console de Processing.</p>
+</li>
+</ul>
+<p>Calculer le nombre d'étapes nécessaires à l'exécution des tris, donner une
+explication qualitative à cette différence.</p>
+<h2 id="tri-par-selection">Tri par sélection</h2>
+<p>Implémenter le <a href="https://fr.wikipedia.org/wiki/Tri_par_s%C3%A9lection">tri par sélection</a> et afficher le résultat.</p>
+<h2 id="affichage-et-animation">Affichage et Animation</h2>
+<ul>
+<li>
+<p>Afficher les listes non triée et triée à l'aide de votre fonction de la question 1.2.</p>
+</li>
+<li>
+<p>Sauvegarder les états intermédiaires de chaque étape de votre tri afin de pour
+l'afficher étape par étape. Créer une animation à partir de ses étapes.</p>
+</li>
+</ul>
+<p>Utilisez le type <code>ArrayList&lt;IntList&gt;</code> afin de sauver une
+liste de liste d'entiers qui servira à sauver les différentes étapes.</p>
+
+
+
+  </div> 
+  <div class="footer">
+    
+<hr>
+<p class="footnote">Found an error? Let us know: 
+    <a href="https://github.com/kenn7/kenn7.github.io/">
+        https://github.com/kenn7/kenn7.github.io/
+    </a>
+</p>
+
+
+  </div>
+</body>
+
+</html>

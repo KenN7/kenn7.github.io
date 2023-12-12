@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSL course material</title>
+
+  <link rel="preload" as="font" href="/fonts/cmuserif_roman_macroman/cmunrm-webfont.woff" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/cmuserif_bold_macroman/cmunbx-webfont.woff" type="font/woff" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="/main.js"></script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+  
+
+
+</head>
+
+<body>
+  <div class="container">
+    
+<h1 class="title">
+  Artificial Intelligence Project
+</h1>
+<div class="sub_grid">
+  <div><button id="print_button" class="no-print button_effect">🖨️(as pdf)</button></div>
+  <div>v1.0.0</div>
+  <div class="subtitle">2023-09-15</div>
+  <div id="all_sol_but_div"></div>
+</div>
+
+<h1 id="introduction">Introduction</h1>
+<img src="/AIproject/ios_fa.png" alt="Smart image galery" width=30% />
+<img src="/AIproject/lightr.png" alt="Smart image galery" width=66% />
+<p>Screenshots from <a href="https://support.apple.com/fr-fr/guide/iphone/iph9c7ee918c/ios">iOS Photo app</a> and <a href="https://helpx.adobe.com/lightroom-classic/help/face-recognition.html">Adobe Lightroom</a></p>
+<h2 id="smart-image-gallery">Smart image gallery</h2>
+<p>We want to create a smart image gallery. Your image galery should have the
+following features: Automatic detection of persons and possibly animals.
+Identifying a person and being capable of detecting all occurrences of a 
+specific person accross images, being able to filter by person.</p>
+<p>This project is multidisciplinary, you will leverage your knowledge of machine
+learning, learn new techniques, and also use your knowledge of programming,
+web development, and ergonomics.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>A web app that allows users to upload and process image files.</li>
+<li>The app processes the images and detects humans.</li>
+<li>The app detects animals in images.</li>
+<li>The app clusters and identifies humans and animals </li>
+<li>There is the possibility of tagging or adding custom labels to images for better organization.</li>
+<li>It is possible to filter images by humans in them.</li>
+<li>It is possible to filter images by types of animals in them.</li>
+</ul>
+<h2 id="tools">Tools</h2>
+<p>You can use any tools you want, both for the web and for the machine learning
+parts.
+You can use any programming language, any existing dataset you can find online,
+any pre-trained machine learning model (do not forget to cite your sources).</p>
+<p>One component of the project should include a machine learning model that you have trained.</p>
+<p>The report should contain the full technical explanation of the different
+machine learning techniques that you will use. It should follow this structure:
+Introduction, Materials and methods, Results, Discussion.</p>
+<h1 id="evaluation">Evaluation</h1>
+<h2 id="grading">Grading</h2>
+<p>The project should be done in groups of 2 or 3 students.
+The report, presentation, and sources should be uploaded to claco.</p>
+<p>The evaluation is separated into 3 parts: </p>
+<ul>
+<li>how well your app works, its performance on some unseen examples, the machine
+learning techniques, including report (50%),</li>
+<li>the ergonomics, functionalities and overall look &amp; feel (25%),</li>
+<li>the presentation and questions (25%).</li>
+</ul>
+<h2 id="presentation">Presentation</h2>
+<p>As a <strong>group</strong>, you prepare a 15-minute presentation to be presented on December
+20.
+For the presentation: present your solution, justify your choices, present your results, and make a
+demonstration of your app (with possible limitations?).</p>
+<p>The presentation will be followed by 15 minutes of questions.</p>
+
+
+
+  </div> 
+  <div class="footer">
+    
+<hr>
+<p class="footnote">Found an error? Let us know: 
+    <a href="https://github.com/kenn7/kenn7.github.io/">
+        https://github.com/kenn7/kenn7.github.io/
+    </a>
+</p>
+
+
+  </div>
+</body>
+
+</html>

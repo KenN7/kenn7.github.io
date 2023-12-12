@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSL course material</title>
+
+  <link rel="preload" as="font" href="/fonts/cmuserif_roman_macroman/cmunrm-webfont.woff" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/cmuserif_bold_macroman/cmunbx-webfont.woff" type="font/woff" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="/main.js"></script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+  
+
+
+</head>
+
+<body>
+  <div class="container">
+    
+<h1 class="title">
+  NoSQL Databases project
+</h1>
+<div class="sub_grid">
+  <div><button id="print_button" class="no-print button_effect">🖨️(as pdf)</button></div>
+  <div>v1.0.0</div>
+  <div class="subtitle">2023-09-20</div>
+  <div id="all_sol_but_div"></div>
+</div>
+
+<h1 id="introduction">Introduction</h1>
+<p>In groups, you are going to make a small presentation on a specific 
+implementation of a NoSQL database of your choice, along with a 
+showcase app and technical report.</p>
+<h1 id="choosing-a-database-and-testing-it">Choosing a database and testing it</h1>
+<p>First choose a NoSQL database that you want to try out.</p>
+<p>Then prepare a showcase app project using your database:</p>
+<ul>
+<li>Choose a domain of application (e.g. blog articles, social media comments,
+recipe list, store inventory, etc.)</li>
+<li>Present the data to be saved and your data model</li>
+<li>Build a small app to interact with the database, and present basic
+operations one would want to make.</li>
+<li>Make a tutorial on how to install and use the database and your basic app. </li>
+</ul>
+<h1 id="presentation">Presentation</h1>
+<p>You prepare a 15-minute presentation (followed by questions from the audience)
+for the last course about one NoSQL database. </p>
+<p>During this presentation, you will introduce the basic aspects of the
+database you chose including (but not exclusively): Implementation, type of DB
+(key-value, document, column, graph, etc.), basic features of this type of DB, 
+consistency model, implication of such model, features of the specific
+implementation of your DB, specificities of your DB, 
+use cases, presentation on how to interact with the database (API?, language?)
+(with examples).</p>
+<p>You will also present your showcase app.</p>
+<h1 id="report">Report</h1>
+<p>Based on your showcase app, you will produce a small tutorial (pdf format)
+on how to install the database of your choice, populate it with data, and
+use your app.</p>
+<h1 id="evaluation">Evaluation</h1>
+<p>You will be graded based on the quality of your presentation, report and
+showcase app.</p>
+<p>The report, presentation and sources, should be uploaded to claco before <strong>08/11/2023 20:00</strong>.</p>
+
+
+
+  </div> 
+  <div class="footer">
+    
+<hr>
+<p class="footnote">Found an error? Let us know: 
+    <a href="https://github.com/kenn7/kenn7.github.io/">
+        https://github.com/kenn7/kenn7.github.io/
+    </a>
+</p>
+
+
+  </div>
+</body>
+
+</html>

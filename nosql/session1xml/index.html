@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSL course material</title>
+
+  <link rel="preload" as="font" href="/fonts/cmuserif_roman_macroman/cmunrm-webfont.woff" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/cmuserif_bold_macroman/cmunbx-webfont.woff" type="font/woff" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="/main.js"></script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+  
+
+
+</head>
+
+<body>
+  <div class="container">
+    
+<h1 class="title">
+  Introduction to XML, exercices
+</h1>
+<div class="sub_grid">
+  <div><button id="print_button" class="no-print button_effect">🖨️(as pdf)</button></div>
+  <div>v1.0.0</div>
+  <div class="subtitle">2022-10-10</div>
+  <div id="all_sol_but_div"></div>
+</div>
+
+<h1 id="introduction-to-xml">Introduction to XML</h1>
+<h2 id="basics">Basics</h2>
+<h3 id="transform-this-xml-tree-into-an-xml-document">Transform this XML tree into an XML document</h3>
+<img src="/nosql/xmltree.jpg" width="60%" />
+<h3 id="transform-this-xml-document-into-a-tree">Transform this XML document into a tree</h3>
+<pre data-lang="xml" style="background-color:#2b303b;color:#c0c5ce;" class="language-xml "><code class="language-xml" data-lang="xml"><span>&lt;?</span><span style="color:#bf616a;">xml </span><span style="color:#d08770;">version</span><span>=&quot;</span><span style="color:#a3be8c;">1.0</span><span>&quot; </span><span style="color:#d08770;">encoding</span><span>=&quot;</span><span style="color:#a3be8c;">UTF-8</span><span>&quot;?&gt;
+</span><span>&lt;</span><span style="color:#bf616a;">Race </span><span style="color:#d08770;">date</span><span>=&quot;</span><span style="color:#a3be8c;">2020-12-15</span><span>&quot; </span><span style="color:#d08770;">name</span><span>=&quot;</span><span style="color:#a3be8c;">Holiday Meet</span><span>&quot;&gt;
+</span><span>    &lt;</span><span style="color:#bf616a;">Course</span><span>&gt;
+</span><span>        &lt;</span><span style="color:#bf616a;">CourseName</span><span>&gt;The track&lt;/</span><span style="color:#bf616a;">CourseName</span><span>&gt;
+</span><span>        &lt;</span><span style="color:#bf616a;">Address</span><span>&gt;Track road 123&lt;/</span><span style="color:#bf616a;">Address</span><span>&gt;
+</span><span>    &lt;/</span><span style="color:#bf616a;">Course</span><span>&gt;
+</span><span>    &lt;</span><span style="color:#bf616a;">Horses</span><span>&gt;
+</span><span>        &lt;</span><span style="color:#bf616a;">Horse </span><span style="color:#d08770;">name</span><span>=&quot;</span><span style="color:#a3be8c;">Bonfire</span><span>&quot;&gt;
+</span><span>            &lt;</span><span style="color:#bf616a;">Value</span><span>&gt;5000&lt;/</span><span style="color:#bf616a;">Value</span><span>&gt;
+</span><span>            &lt;</span><span style="color:#bf616a;">Birthdate</span><span>&gt;1998-05-01&lt;/</span><span style="color:#bf616a;">Birthdate</span><span>&gt;
+</span><span>            &lt;</span><span style="color:#bf616a;">Gender</span><span>&gt;M&lt;/</span><span style="color:#bf616a;">Gender</span><span>&gt;
+</span><span>        &lt;/</span><span style="color:#bf616a;">Horse</span><span>&gt;
+</span><span>        &lt;</span><span style="color:#bf616a;">Horse </span><span style="color:#d08770;">name</span><span>=&quot;</span><span style="color:#a3be8c;">Dobby</span><span>&quot;&gt;
+</span><span>            &lt;</span><span style="color:#bf616a;">Value</span><span>&gt;1000&lt;/</span><span style="color:#bf616a;">Value</span><span>&gt;
+</span><span>            &lt;</span><span style="color:#bf616a;">Birthdate</span><span>&gt;2001-04-05&lt;/</span><span style="color:#bf616a;">Birthdate</span><span>&gt;
+</span><span>            &lt;</span><span style="color:#bf616a;">Gender</span><span>&gt;F&lt;/</span><span style="color:#bf616a;">Gender</span><span>&gt;
+</span><span>        &lt;/</span><span style="color:#bf616a;">Horse</span><span>&gt;
+</span><span>        &lt;</span><span style="color:#bf616a;">Horse </span><span style="color:#d08770;">name</span><span>=&quot;</span><span style="color:#a3be8c;">Pegasus</span><span>&quot;&gt;
+</span><span>            &lt;</span><span style="color:#bf616a;">Value</span><span>&gt;10000&lt;/</span><span style="color:#bf616a;">Value</span><span>&gt;
+</span><span>            &lt;</span><span style="color:#bf616a;">Birthdate</span><span>&gt;2000-01-01&lt;/</span><span style="color:#bf616a;">Birthdate</span><span>&gt;
+</span><span>            &lt;</span><span style="color:#bf616a;">Gender</span><span>&gt;F&lt;/</span><span style="color:#bf616a;">Gender</span><span>&gt;
+</span><span>        &lt;/</span><span style="color:#bf616a;">Horse</span><span>&gt;
+</span><span>    &lt;/</span><span style="color:#bf616a;">Horses</span><span>&gt;
+</span><span>&lt;/</span><span style="color:#bf616a;">Race</span><span>&gt;
+</span></code></pre>
+<h2 id="make-your-own">Make your own</h2>
+<p>From this description, create your own XML document format,
+start with a tree and then write the XML document.</p>
+<h3 id="beef-parmesan-with-garlic-angel-hair-pasta">Beef Parmesan with Garlic Angel Hair Pasta</h3>
+<h4 id="ingredients">Ingredients</h4>
+<ul>
+<li>1 1/2 pounds beef cube steak</li>
+<li>1 onion, sliced into thin rings</li>
+<li>1 green bell pepper, sliced in rings</li>
+<li>1 cup Italian seasoned bread crumbs</li>
+<li>1/2 cup grated Parmesan cheese</li>
+<li>2 tablespoons olive oil</li>
+<li>1 (16 ounce) jar spaghetti sauce</li>
+<li>1/2 cup shredded mozzarella cheese</li>
+<li>12 ounces angel hair pasta</li>
+<li>2 teaspoons minced garlic</li>
+<li>1/4 cup butter</li>
+</ul>
+<h4 id="directions">Directions</h4>
+<p>Preheat oven to 175 degrees C.</p>
+<p>Cut cube steak into serving size pieces. Coat meat with the bread crumbs
+and parmesan cheese. Heat olive oil in a large frying pan, and saute 1
+teaspoon of the garlic for 3 minutes. Quick fry (brown quickly on both sides)
+meat. Place meat in a casserole baking dish, slightly overlapping edges.
+Place onion rings and peppers on top of meat, and pour marinara sauce
+over all.</p>
+<p>Bake at 175 degrees C for 30 to 45 minutes, depending on
+the thickness of the meat. Sprinkle mozzarella over meat and leave in the
+oven till bubbly.</p>
+<p>Boil pasta al dente. Drain, and toss in butter and 1 teaspoon garlic. For a
+stronger garlic taste, season with garlic powder. Top with grated parmesan
+and parsley for color. Serve meat and sauce atop a mound of pasta! </p>
+<p>HINT:
+make the meat ahead of time, and refrigerate over night, the acid in the
+tomato sauce will tenderize the meat even more. If you do this, save the
+mozzarella till the last minute.</p>
+<ul>
+<li>Calories 1167</li>
+<li>Protein 71g</li>
+<li>Fat 52g</li>
+<li>Carbohydrates 101g</li>
+</ul>
+<h2 id="dtd-definitions">DTD definitions</h2>
+<h3 id="install-the-xml-extension-on-vscode">Install the XML extension on vscode:</h3>
+<img src="/nosql/xml_ext.jpg" width="100%" />
+<h3 id="define-a-complete-dtd-for-the-previous-examples-the-cookbook-and-the-race-track">Define a complete DTD for the previous examples (the cookbook and the race track)</h3>
+<p>Test the validy of your XML documents with your DTD definition.</p>
+<h2 id="xml-schema-definition-xsd">XML Schema Definition (XSD)</h2>
+<p>Write the XML Schema Definition (XSD) and the previous recipe example and validate the document.</p>
+<h2 id="python-xml-api">Python XML API</h2>
+<p>Extract the information from the XML file using the python 
+<a href="https://docs.python.org/3/library/xml.etree.elementtree.html#module-xml.etree.ElementTree"><code>xml.etree.ElementTree</code> library</a>
+and make an interactive command line python app with a menu to list and print 
+the different recipes of a cookbook in the terminal.</p>
+
+
+
+  </div> 
+  <div class="footer">
+    
+<hr>
+<p class="footnote">Found an error? Let us know: 
+    <a href="https://github.com/kenn7/kenn7.github.io/">
+        https://github.com/kenn7/kenn7.github.io/
+    </a>
+</p>
+
+
+  </div>
+</body>
+
+</html>

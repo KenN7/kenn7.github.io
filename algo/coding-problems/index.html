@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSL course material</title>
+
+  <link rel="preload" as="font" href="/fonts/cmuserif_roman_macroman/cmunrm-webfont.woff" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/cmuserif_bold_macroman/cmunbx-webfont.woff" type="font/woff" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="/main.js"></script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+  
+
+
+</head>
+
+<body>
+  <div class="container">
+    
+<h1 class="title">
+  Algorithms, coding problems.
+</h1>
+<div class="sub_grid">
+  <div><button id="print_button" class="no-print button_effect">🖨️(as pdf)</button></div>
+  <div>v1.0.1</div>
+  <div class="subtitle">2023-09-15</div>
+  <div id="all_sol_but_div"></div>
+</div>
+
+<h1 id="coding-problem-assignement">Coding problem assignement</h1>
+<h2 id="introduction">Introduction</h2>
+<p>You should solve some problems from <a href="https://adventofcode.com/">Advent Of Code</a>
+2023 edition (starting december 1).
+Advent Of Code is an advent calendar for coding exercises, each day of december,
+a new problem is unlocked and available for solving. Each problem has 2 levels,
+in order to get a double <em>gold</em> star, you need to solve both levels of the problem.</p>
+<p>In groups of $n$ student(s) you should get at least $\left\lceil 7 \cdot \log_2 (n+1) \right\rceil$ double gold stars
+(with $ 0 &lt; n \leq 3$).</p>
+<p>Those exercises account for 30% of your final grade.</p>
+<h2 id="submission">Submission</h2>
+<p>Please provide a screenshot of your Advent Of Code dashboard showing your user
+at the top right (example below for 2020), that shows at least $\left\lceil 7 \cdot \log_2 (n+1) \right\rceil$ double gold stars.</p>
+<p>You will upload all your code and your screenshot as an archive on claco.</p>
+<img src="/algo/aoc.png" alt="AOC screenshot" width=100% />
+
+
+
+  </div> 
+  <div class="footer">
+    
+<hr>
+<p class="footnote">Found an error? Let us know: 
+    <a href="https://github.com/kenn7/kenn7.github.io/">
+        https://github.com/kenn7/kenn7.github.io/
+    </a>
+</p>
+
+
+  </div>
+</body>
+
+</html>

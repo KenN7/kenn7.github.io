@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSL course material</title>
+
+  <link rel="preload" as="font" href="/fonts/cmuserif_roman_macroman/cmunrm-webfont.woff" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/cmuserif_bold_macroman/cmunbx-webfont.woff" type="font/woff" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="/main.js"></script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+  
+
+
+</head>
+
+<body>
+  <div class="container">
+    
+<h1 class="title">
+  Machine learning exercices
+</h1>
+<div class="sub_grid">
+  <div><button id="print_button" class="no-print button_effect">🖨️(as pdf)</button></div>
+  <div>v1.0.0</div>
+  <div class="subtitle">2022-03-03</div>
+  <div id="all_sol_but_div"></div>
+</div>
+
+<h1 id="introduction">Introduction</h1>
+<p>The exercises proposed during the practical sessions of the machine learning
+course are based on the mini-courses available on the 
+<a href="https://www.kaggle.com/">kaggle</a> platform.</p>
+<p><a href="https://www.kaggle.com/">Kaggle</a> is an online community of data scientists 
+and machine learning practitioners. Kaggle allows users to find and publish 
+data sets, explore and build models, work with other data scientists and 
+machine learning engineers, and enter competitions to solve data science challenges.</p>
+<p>Kaggle has embedded notebooks similar to <a href="https://jupyter.org/">jupyter notebooks</a>
+that allows one to experiment and build machine learning algorithms in a fully
+web-based environment.</p>
+<h1 id="exercices">Exercices</h1>
+<p>We will ask you to fulfill the following mini-courses available in the 
+<a href="https://www.kaggle.com/learn">&quot;courses&quot; section of kaggle</a>:</p>
+<ul>
+<li>
+<p><a href="https://www.kaggle.com/learn/intro-to-machine-learning">Intro to machine learning</a></p>
+</li>
+<li>
+<p><a href="https://www.kaggle.com/learn/pandas">Pandas</a></p>
+</li>
+<li>
+<p><a href="https://www.kaggle.com/learn/intermediate-machine-learning">Intermediate machine learning</a></p>
+</li>
+<li>
+<p><a href="https://www.kaggle.com/learn/feature-engineering">Feature engineering</a></p>
+</li>
+<li>
+<p><a href="https://www.kaggle.com/learn/intro-to-deep-learning">Intro to deep learning</a></p>
+</li>
+<li>
+<p><a href="https://www.kaggle.com/learn/computer-vision">Computer vision</a></p>
+</li>
+</ul>
+<h1 id="project">Project</h1>
+<p>You will have to analyse and train a model on the following task:</p>
+<p><a href="https://zindi.africa/competitions/xente-fraud-detection-challenge">Xente fraud detection challenge</a></p>
+<p>At the end of your project, you should produce a report that contains:
+all the analysis of the dataset and the feature engineering that you did,
+the performance of your model, and a comparison with different other models.
+The quality of the scientific reasoning is equally as important as the
+performance of your model.</p>
+<h1 id="assessment">Assessment</h1>
+<p>You will be assessed of two works:</p>
+<ul>
+<li>
+<p>A <strong>short written interogation</strong> that will be held at 
+the <strong>end of the last lab</strong> session. 
+The content will be based on the technical content of the kaggle exercices.</p>
+</li>
+<li>
+<p>The project: report and code should be uploaded to claco.</p>
+</li>
+</ul>
+
+
+
+  </div> 
+  <div class="footer">
+    
+<hr>
+<p class="footnote">Found an error? Let us know: 
+    <a href="https://github.com/kenn7/kenn7.github.io/">
+        https://github.com/kenn7/kenn7.github.io/
+    </a>
+</p>
+
+
+  </div>
+</body>
+
+</html>

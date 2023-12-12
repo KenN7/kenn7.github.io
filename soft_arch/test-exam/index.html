@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSL course material</title>
+
+  <link rel="preload" as="font" href="/fonts/cmuserif_roman_macroman/cmunrm-webfont.woff" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/cmuserif_bold_macroman/cmunbx-webfont.woff" type="font/woff" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="/main.js"></script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+  
+
+
+</head>
+
+<body>
+  <div class="container">
+    
+<h1 class="title">
+  Software architecture: Test exam example
+</h1>
+<div class="sub_grid">
+  <div><button id="print_button" class="no-print button_effect">🖨️(as pdf)</button></div>
+  <div>v1.0.0</div>
+  <div class="subtitle">2023-04-28</div>
+  <div id="all_sol_but_div"></div>
+</div>
+
+<h1 id="introduction">Introduction</h1>
+<p>Ci-dessous se trouvent 5 questions d'exemple de la même nature que celles
+posées lors de l'examen du cours.</p>
+<p>Pour rappel, lors de cet examen, vous aurez 60 minutes pour répondre à 
+des questions (entre 25 et 30). 
+Parmis les questions, entre 5 et 10
+d'entre elles seront liés aux projets que vous avez réalisés.
+Aucun document n’est autorisé.</p>
+<h1 id="questions">Questions</h1>
+<h2 id="parmis-les-propositions-suivantes-laquelle-n-est-pas-une-application-utilisant-l-architecture-peer-to-peer">Parmis les propositions suivantes, laquelle n'est pas une application utilisant l'architecture peer-to-peer ?</h2>
+<ul>
+<li>Bitorrent</li>
+<li>Skype</li>
+<li>Github</li>
+<li>le réseau Bitcoin</li>
+</ul>
+<h2 id="que-signifie-confidentiality-dans-la-triade-cia">Que signifie &quot;Confidentiality&quot; dans la triade CIA ?</h2>
+<ul>
+<li>L'assurance que les données sont disponibles pour les bons utilisateurs</li>
+<li>La protection des informations contre la modification</li>
+<li>L'assurance que les données sont toujours disponibles</li>
+<li>L'assurance que les utilisateurs peuvent avoir accès à leurs données</li>
+</ul>
+<h2 id="je-travaille-sur-une-branche-dans-un-depot-git-laquelle-de-ses-affirmations-est-vraie">Je travaille sur une branche dans un dépot Git, laquelle de ses affirmations est vraie ?</h2>
+<ul>
+<li>Après mon commit, si je push mes modifications mais que quelqu'un d'autre a aussi travaillé sur
+la branche, je vais devoir fusionner les changements.</li>
+<li>Après mon commit, si je push mes modifications mais que quelqu'un d'autre a aussi travaillé sur
+la branche, je risque de perdre tout mes changements.</li>
+<li>Après mon commit, si je push mes modifications mais que quelqu'un d'autre a aussi travaillé sur
+la branche, ce n'est pas grave, il ne va rien de passer.</li>
+<li>C'est impossible que quelqu'un travaille sur la même branche que moi.</li>
+</ul>
+<h2 id="quelle-est-la-complexite-cyclomatique-de-la-fonction-suivante">Quelle est la complexité cyclomatique de la fonction suivante ?</h2>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">print_hello</span><span>(</span><span style="color:#bf616a;">name</span><span>):
+</span><span>    </span><span style="color:#b48ead;">if </span><span>name == &quot;</span><span style="color:#a3be8c;">John</span><span>&quot;:
+</span><span>        </span><span style="color:#96b5b4;">print</span><span>(&#39;</span><span style="color:#a3be8c;">Hello Master John</span><span>&#39;)
+</span><span>    </span><span style="color:#b48ead;">else</span><span>:
+</span><span>        </span><span style="color:#96b5b4;">print</span><span>(&#39;</span><span style="color:#a3be8c;">Hello </span><span>&#39;, name)
+</span></code></pre>
+<ul>
+<li>1</li>
+<li>2</li>
+<li>0</li>
+<li>3 </li>
+</ul>
+<h2 id="le-langage-dit-langage-machine-est">Le langage dit &quot;langage machine&quot; est:</h2>
+<ul>
+<li>Un langage de haut niveau</li>
+<li>Un langage interprété</li>
+<li>Un langage en binaire</li>
+<li>Un langage de 4ème generation</li>
+</ul>
+
+
+
+  </div> 
+  <div class="footer">
+    
+<hr>
+<p class="footnote">Found an error? Let us know: 
+    <a href="https://github.com/kenn7/kenn7.github.io/">
+        https://github.com/kenn7/kenn7.github.io/
+    </a>
+</p>
+
+
+  </div>
+</body>
+
+</html>

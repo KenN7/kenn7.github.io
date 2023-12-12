@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSL course material</title>
+
+  <link rel="preload" as="font" href="/fonts/cmuserif_roman_macroman/cmunrm-webfont.woff" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/cmuserif_bold_macroman/cmunbx-webfont.woff" type="font/woff" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="/style.css">
+  <script src="/main.js"></script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+  
+
+
+</head>
+
+<body>
+  <div class="container">
+    
+<h1 class="title">
+  Algorithms, Session 6, Dynamic Programming
+</h1>
+<div class="sub_grid">
+  <div><button id="print_button" class="no-print button_effect">🖨️(as pdf)</button></div>
+  <div>v1.0.0</div>
+  <div class="subtitle">2021-10-19</div>
+  <div id="all_sol_but_div"></div>
+</div>
+
+<h1 id="dynamic-programming">Dynamic Programming</h1>
+<h2 id="coin-change-problem"><strong>Coin change problem</strong></h2>
+<p>Implement the solution to the coin change problem (find the best (smallest) set of numbers that
+sum to a value from a given list) that:</p>
+<ul>
+<li>returns the list of optimal coins</li>
+<li>handles floating point coins and sum</li>
+</ul>
+<p>Do this both using dynamic programming recursive form and tabulation form.</p>
+<h2 id="number-of-ways-to-climb-a-staircase"><strong>Number of ways to climb a staircase</strong></h2>
+<p>There exists a staircase with $n$ steps which you can climb up either 1 or 2 steps at a time. Given $n$, write a function that returns the number of unique ways you can climb the staircase. The order of the steps matters. For example, if $n$ is 4, then there are 5 unique ways:</p>
+<ul>
+<li>$1$,$1$,$1$,$1$</li>
+<li>$2$,$1$,$1$</li>
+<li>$1$,$2$,$1$</li>
+<li>$1$,$1$,$2$</li>
+<li>$2$,$2$</li>
+</ul>
+<p>Follow-up: what if, instead of being able to climb 1 or 2 steps at a time, you could climb any number from a set of positive integers $X$? For example, if $X$ = $1$,$3$,$5$ you could climb 1,3 or 5 steps at a time.</p>
+<h2 id="number-of-ways-to-decode-a-string"><strong>Number of ways to decode a string</strong></h2>
+<p>Given the mapping $a$=$1$, $b$=$2$, $\ldots$, $z$=$26$, and an encoded message, count the number of ways it can be decoded. For example the message &quot;<code>111</code>&quot; should be $3$, since it could be decoded as &quot;<code>aaa</code>&quot;, &quot;<code>ka</code>&quot; and &quot;<code>ak</code>&quot;.
+You can assume that the messages are always decodable. For example &quot;<code>001</code>&quot; is not allowed.</p>
+<h2 id="painting-houses"><strong>Painting houses</strong></h2>
+<p>A builder is looking to build a row of $n$ houses that can be of $k$ different colors. She has a goal of minimizing the cost while ensuring that no two neighboring houses are of the same color. Given an $n$ by $k$ matrix where the entry at the $i^{th}$ row and the $j^{th}$ column represents the cost to build the $i^{th}$ house with the $j^{th}$ color, return the minimum cost required to achieve this goal.</p>
+
+
+
+  </div> 
+  <div class="footer">
+    
+<hr>
+<p class="footnote">Found an error? Let us know: 
+    <a href="https://github.com/kenn7/kenn7.github.io/">
+        https://github.com/kenn7/kenn7.github.io/
+    </a>
+</p>
+
+
+  </div>
+</body>
+
+</html>
